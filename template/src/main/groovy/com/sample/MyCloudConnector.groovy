@@ -127,8 +127,8 @@ class MyCloudConnector extends CloudConnector {
                               .withMethod(HttpMethod.Post)
                               .withContent("{\"value\":\"${valueToSend}\"}", "application/json")
                 return new Good(new ActionResponse([
-                    new ActionRequest(new BySamiDeviceId(did), [req], [])]
-                ))
+                    new ActionRequest(new BySamiDeviceId(did), [req], [])
+                ]))
             default:        
                 return new Bad(new Failure("Unknown action: ${action.name}"))
         }

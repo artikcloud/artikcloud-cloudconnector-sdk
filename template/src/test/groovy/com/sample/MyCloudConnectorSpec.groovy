@@ -63,7 +63,7 @@ class MyCloudConnectorSpec extends Specification {
 							.withContent('{"value":"foo"}', "application/json")
 					],
 					[]
-                )	
+				)	
 			])
 		}
 
