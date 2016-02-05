@@ -103,7 +103,39 @@ class MyCloudConnector extends CloudConnector {
         }
     }
 
-    // Or<Seq<Event>, Failure> onNotificationData(Context ctx, DeviceInfo info, String data) {
+    // Or<List<Event>, Failure> onNotificationData(Context ctx, DeviceInfo info, String data) {
   	// 	new Bad(new Failure("unsupported: method onNotificationData should be implemented"))
     // }
+
+    @Override
+    Or<List<ActionResponse>, Failure> onAction(Context ctx, ActionDef action, DeviceInfo info) {
+        switch (action.name) {
+            case "setValue":
+                def did = info.did
+                def extId = info.extId.getOrElse(null)
+                def paramsAsJson = slurper.parseText(action.params)
+                def valueToSend = paramsAsJson.value
+
+                if (extId == null) {
+                    return new Bad(new Failure("Missing field external id in DeviceInfo ${extId}"))
+                }
+                if (valueToSend == null) {
+                    return new Bad(new Failure("Missing field 'value' in action parameters ${paramsAsJson}"))
+                }
+
+                def req = new RequestDef("${ctx.parameters().endpoint}/actions/${extId}/setValue")
+                              .withMethod(HttpMethod.Post)
+                              .withContent("{\"value\":\"${valueToSend}\"}", "application/json")
+                return new Good(new ActionResponse([
+                    new ActionRequest(new BySamiDeviceId(did), [req], [])]
+                ))
+            default:        
+                return new Bad(new Failure("Unknown action: ${action.name}"))
+        }
+
+    // Or<List<Event>, Failure> onActionData(Context ctx, DeviceInfo info, String data) {
+    //  new Bad(new Failure("unsupported: method onActionData should be implemented"))
+    // }
+
+    }
 }
