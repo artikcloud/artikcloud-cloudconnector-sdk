@@ -61,8 +61,7 @@ class MyCloudConnectorSpec extends Specification {
 						new RequestDef("${ctx.parameters().endpoint}/actions/extId/setValue")
 							.withMethod(HttpMethod.Post)
 							.withContent('{"value":"foo"}', "application/json")
-					],
-					[]
+					]
 				)	
 			])
 		}
