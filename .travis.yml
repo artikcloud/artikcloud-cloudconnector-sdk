@@ -5,8 +5,8 @@ jdk:
 branches:
   except:
     - gh-pages
-install: cd template && ../gradlew assemble
-script: cd template && ../gradlew test
+install: cd template && ../gradlew assemble && cd -
+script: cd template && ../gradlew test && cd -
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 cache:
