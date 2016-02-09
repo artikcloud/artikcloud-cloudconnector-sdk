@@ -1,6 +1,8 @@
 SAMI Cloud Connector SDK
 ========================
 
+[![Build Status](https://travis-ci.org/samsungsamiio/sami-cloudconnector-sdk.svg?branch=master)](https://travis-ci.org/samsungsamiio/sami-cloudconnector-sdk)
+
 Background
 -----------------------
 
@@ -19,4 +21,3 @@ What is included in this repository?
  1. libs: SDK libraries
  2. apidoc: Cloud Connector SDK API documenation
  3. template: A template project. You can build and test your own Cloud Connector code based on it.
-
