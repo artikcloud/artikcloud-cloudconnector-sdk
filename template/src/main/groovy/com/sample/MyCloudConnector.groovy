@@ -108,7 +108,7 @@ class MyCloudConnector extends CloudConnector {
     // }
 
     @Override
-    Or<List<ActionResponse>, Failure> onAction(Context ctx, ActionDef action, DeviceInfo info) {
+    Or<ActionResponse, Failure> onAction(Context ctx, ActionDef action, DeviceInfo info) {
         switch (action.name) {
             case "setValue":
                 def did = info.did
@@ -132,10 +132,9 @@ class MyCloudConnector extends CloudConnector {
             default:        
                 return new Bad(new Failure("Unknown action: ${action.name}"))
         }
+    }
 
     // Or<List<Event>, Failure> onActionData(Context ctx, DeviceInfo info, String data) {
     //  new Bad(new Failure("unsupported: method onActionData should be implemented"))
     // }
-
-    }
 }
