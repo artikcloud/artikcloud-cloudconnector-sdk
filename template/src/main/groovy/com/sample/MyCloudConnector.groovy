@@ -61,13 +61,13 @@ class MyCloudConnector extends CloudConnector {
     // CALLBACK
     // -----------------------------------------
     @Override
-    Or<NotificationResponse, Failure> onNotification(Context ctx, RequestDef inReq) {
-        def did = inReq.headers()['notificationId']
+    Or<NotificationResponse, Failure> onNotification(Context ctx, RequestDef req) {
+        def did = req.headers()['notificationId']
         if (did == null) {
-            ctx.debug('Bad notification (where is did in following req : ) ' + inReq)
+            ctx.debug('Bad notification (where is did in following req : ) ' + req)
             return new Bad(new Failure('Impossible to recover device id from token request.'))
         }
-        def content = inReq.content()
+        def content = req.content()
         def json = slurper.parseText(content)
 
         def dataToFetch = json.messages.collect { e ->
