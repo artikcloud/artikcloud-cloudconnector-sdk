@@ -18,13 +18,11 @@ repo=$(git config --local --get-all remote.origin.url | cut -d ':' -f2)
 
 echo -e "Starting to update gh-pages of ${repo} at ${rev}\n"
 
-# instead of cloning a remote repo, clone itself and define remote as upstream
+# on Travis, can't optimize by cloning itself and define remote as upstream
+# travis> "attempt to fetch/clone from a shallow repository"
+# So need to do a full clone
 rm -Rf gh-pages
-git clone -b gh-pages . gh-pages
-cd gh-pages
-git remote add upstream https://${GH_TOKEN}@github.com/${repo}
-git fetch upstream
-git reset upstream/gh-pages
+git clone -b gh-pages https://${GH_TOKEN}@github.com/${repo} gh-pages
 
 rsync -avz --stats ../../apidoc/ apidoc/
 
@@ -32,7 +30,7 @@ git config --local user.email "travis@travis-ci.org"
 git config --local user.name "Travis"
 git add -A .
 git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to gh-pages at ${rev}"
-git push upstream gh-pages
+git push origin gh-pages
 cd ..
 rm -Rf gh-pages
 
