@@ -66,7 +66,58 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="com.samsung.sami.cloudconnector.api_v1.AuthType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="com.samsung.sami.cloudconnector.api_v1.ActionDef" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ActionDefextendsProductwithSerializable"></a>
+      <a id="ActionDef:ActionDef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActionDef.html"><span class="name">ActionDef</span></a><span class="params">(<span name="sdid">sdid: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ddid">ddid: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ts">ts: <span class="extype" name="scala.Long">Long</span></span>, <span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="params">params: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.samsung.sami.cloudconnector.api_v1.package@ActionDefextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.samsung.sami.cloudconnector.api_v1.ActionRequest" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ActionRequestextendsProductwithSerializable"></a>
+      <a id="ActionRequest:ActionRequest"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActionRequest.html"><span class="name">ActionRequest</span></a><span class="params">(<span name="selector">selector: <a href="DeviceSelector.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.DeviceSelector">DeviceSelector</a></span>, <span name="requestsOfData">requestsOfData: <span class="extype" name="java.util.List">List</span>[<a href="RequestDef.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.RequestDef">RequestDef</a>] = <span class="symbol"><span class="name"><a href="Empty$.html">Empty.list</a></span></span></span>, <span name="dataProvided">dataProvided: <span class="extype" name="java.util.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="Empty$.html">Empty.list</a></span></span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.samsung.sami.cloudconnector.api_v1.package@ActionRequestextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.samsung.sami.cloudconnector.api_v1.ActionResponse" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ActionResponseextendsProductwithSerializable"></a>
+      <a id="ActionResponse:ActionResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActionResponse.html"><span class="name">ActionResponse</span></a><span class="params">(<span name="actionRequests">actionRequests: <span class="extype" name="java.util.List">List</span>[<a href="ActionRequest.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.ActionRequest">ActionRequest</a>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.samsung.sami.cloudconnector.api_v1.package@ActionResponseextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.samsung.sami.cloudconnector.api_v1.AuthType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="AuthTypeextendsEnum[com.samsung.sami.cloudconnector.api_v1.AuthType]"></a>
       <a id="AuthType:AuthType"></a>
       <h4 class="signature">
@@ -229,10 +280,27 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="Event.html"><span class="name">Event</span></a><span class="params">(<span name="ts">ts: <span class="extype" name="scala.Long">Long</span></span>, <span name="payload">payload: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a href="Event.html"><span class="name">Event</span></a><span class="params">(<span name="ts">ts: <span class="extype" name="scala.Long">Long</span></span>, <span name="payload">payload: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="kind">kind: <a href="EventType.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.EventType">EventType</a> = <span class="symbol">EventType.data</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../../index.html#com.samsung.sami.cloudconnector.api_v1.package@EventextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.samsung.sami.cloudconnector.api_v1.EventType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="EventTypeextendsEnum[com.samsung.sami.cloudconnector.api_v1.EventType]"></a>
+      <a id="EventType:EventType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="EventType.html"><span class="name">EventType</span></a><span class="result"> extends <span class="extype" name="java.lang.Enum">Enum</span>[<a href="EventType.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.EventType">EventType</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.samsung.sami.cloudconnector.api_v1.package@EventTypeextendsEnum[com.samsung.sami.cloudconnector.api_v1.EventType]" title="Permalink" target="_top">
         <img src="../../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
