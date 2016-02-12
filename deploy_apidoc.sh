@@ -32,7 +32,7 @@ git config --local user.email "travis@travis-ci.org"
 git config --local user.name "Travis"
 git add -A .
 git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to gh-pages at ${rev}"
-#git push upstream gh-pages
+git push upstream gh-pages
 cd ..
-#rm -Rf gh-pages
+rm -Rf gh-pages
 
