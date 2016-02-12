@@ -14,7 +14,7 @@ fi
 
 
 rev=$(git rev-parse --short HEAD)
-repo=$(git config --local --get-all remote.origin.url | cut -d ':' -f2)
+repo=$(git config --local --get-all remote.origin.url | awk -F'[:/]' 'NF && NF-1 {print ($(NF-1)"/"$NF)}')
 
 echo -e "Starting to update gh-pages of ${repo} at ${rev}\n"
 
