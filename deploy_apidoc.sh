@@ -22,9 +22,10 @@ echo -e "Starting to update gh-pages of ${repo} at ${rev}\n"
 # travis> "attempt to fetch/clone from a shallow repository"
 # So need to do a full clone
 rm -Rf gh-pages
-git clone -b gh-pages https://${GH_TOKEN}@github.com/${repo} gh-pages
+git clone -b gh-pages --single-branch https://${GH_TOKEN}@github.com/${repo} gh-pages
+cd gh-pages
 
-rsync -avz --stats ../../apidoc/ apidoc/
+rsync -avz --stats ../apidoc/ apidoc/
 
 git config --local user.email "travis@travis-ci.org"
 git config --local user.name "Travis"
