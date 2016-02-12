@@ -4,6 +4,7 @@ bin/
 target/
 build/
 etc/
+gh-pages/
 .gradle
 
 .classpath
