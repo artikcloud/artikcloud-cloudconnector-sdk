@@ -14,5 +14,5 @@ cache:
 install: cd template && ../gradlew assemble && cd -
 script: cd template && ../gradlew test && cd -
 after_success:
-    - [ $TRAVIS_PULL_REQUEST == "false" ] && [ $TRAVIS_BRANCH == "master" ] && bash deploy_apidoc.sh
+    - '[ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ] && ./deploy_apidoc.sh'
 
