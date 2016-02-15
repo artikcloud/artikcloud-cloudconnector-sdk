@@ -407,7 +407,7 @@ to complete the setup of the CloudConnector on the third party
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="com.samsung.sami.cloudconnector.api_v1.CloudConnector#onAction" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="onAction(ctx:com.samsung.sami.cloudconnector.api_v1.Context,in:com.samsung.sami.cloudconnector.api_v1.ActionDef,info:com.samsung.sami.cloudconnector.api_v1.DeviceInfo):org.scalactic.Or[com.samsung.sami.cloudconnector.api_v1.ActionResponse,com.samsung.sami.cloudconnector.api_v1.Failure]"></a>
+      <a id="onAction(ctx:com.samsung.sami.cloudconnector.api_v1.Context,action:com.samsung.sami.cloudconnector.api_v1.ActionDef,info:com.samsung.sami.cloudconnector.api_v1.DeviceInfo):org.scalactic.Or[com.samsung.sami.cloudconnector.api_v1.ActionResponse,com.samsung.sami.cloudconnector.api_v1.Failure]"></a>
       <a id="onAction(Context,ActionDef,DeviceInfo):Or[ActionResponse,Failure]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -415,10 +415,10 @@ to complete the setup of the CloudConnector on the third party
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">onAction</span><span class="params">(<span name="ctx">ctx: <a href="Context.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.Context">Context</a></span>, <span name="in">in: <a href="ActionDef.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.ActionDef">ActionDef</a></span>, <span name="info">info: <a href="DeviceInfo.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.DeviceInfo">DeviceInfo</a></span>)</span><span class="result">: <span class="extype" name="org.scalactic.Or">Or</span>[<a href="ActionResponse.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.ActionResponse">ActionResponse</a>, <a href="Failure.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.Failure">Failure</a>]</span>
+        <span class="name">onAction</span><span class="params">(<span name="ctx">ctx: <a href="Context.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.Context">Context</a></span>, <span name="action">action: <a href="ActionDef.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.ActionDef">ActionDef</a></span>, <span name="info">info: <a href="DeviceInfo.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.DeviceInfo">DeviceInfo</a></span>)</span><span class="result">: <span class="extype" name="org.scalactic.Or">Or</span>[<a href="ActionResponse.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.ActionResponse">ActionResponse</a>, <a href="Failure.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.Failure">Failure</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../../index.html#com.samsung.sami.cloudconnector.api_v1.CloudConnector@onAction(ctx:com.samsung.sami.cloudconnector.api_v1.Context,in:com.samsung.sami.cloudconnector.api_v1.ActionDef,info:com.samsung.sami.cloudconnector.api_v1.DeviceInfo):org.scalactic.Or[com.samsung.sami.cloudconnector.api_v1.ActionResponse,com.samsung.sami.cloudconnector.api_v1.Failure]" title="Permalink" target="_top">
+      <a href="../../../../../index.html#com.samsung.sami.cloudconnector.api_v1.CloudConnector@onAction(ctx:com.samsung.sami.cloudconnector.api_v1.Context,action:com.samsung.sami.cloudconnector.api_v1.ActionDef,info:com.samsung.sami.cloudconnector.api_v1.DeviceInfo):org.scalactic.Or[com.samsung.sami.cloudconnector.api_v1.ActionResponse,com.samsung.sami.cloudconnector.api_v1.Failure]" title="Permalink" target="_top">
         <img src="../../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -483,7 +483,7 @@ Default impl:</p><pre>Bad(Failure(<span class="lit">"unsupported : method onFetc
     </span>
       <p class="shortcomment cmt">to process the response of the request send on initialize.</p><div class="fullcomment"><div class="comment cmt"><p>to process the response of the request send on initialize.</p><p>Default impl:</p><pre>Good(Empty.map())</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>ignored (TODAY)</p></dd></dl></div>
     </li><li name="com.samsung.sami.cloudconnector.api_v1.CloudConnector#onNotification" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="onNotification(ctx:com.samsung.sami.cloudconnector.api_v1.Context,in:com.samsung.sami.cloudconnector.api_v1.RequestDef):org.scalactic.Or[com.samsung.sami.cloudconnector.api_v1.NotificationResponse,com.samsung.sami.cloudconnector.api_v1.Failure]"></a>
+      <a id="onNotification(ctx:com.samsung.sami.cloudconnector.api_v1.Context,req:com.samsung.sami.cloudconnector.api_v1.RequestDef):org.scalactic.Or[com.samsung.sami.cloudconnector.api_v1.NotificationResponse,com.samsung.sami.cloudconnector.api_v1.Failure]"></a>
       <a id="onNotification(Context,RequestDef):Or[NotificationResponse,Failure]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -491,10 +491,10 @@ Default impl:</p><pre>Bad(Failure(<span class="lit">"unsupported : method onFetc
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">onNotification</span><span class="params">(<span name="ctx">ctx: <a href="Context.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.Context">Context</a></span>, <span name="in">in: <a href="RequestDef.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.RequestDef">RequestDef</a></span>)</span><span class="result">: <span class="extype" name="org.scalactic.Or">Or</span>[<a href="NotificationResponse.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.NotificationResponse">NotificationResponse</a>, <a href="Failure.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.Failure">Failure</a>]</span>
+        <span class="name">onNotification</span><span class="params">(<span name="ctx">ctx: <a href="Context.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.Context">Context</a></span>, <span name="req">req: <a href="RequestDef.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.RequestDef">RequestDef</a></span>)</span><span class="result">: <span class="extype" name="org.scalactic.Or">Or</span>[<a href="NotificationResponse.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.NotificationResponse">NotificationResponse</a>, <a href="Failure.html" class="extype" name="com.samsung.sami.cloudconnector.api_v1.Failure">Failure</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../../index.html#com.samsung.sami.cloudconnector.api_v1.CloudConnector@onNotification(ctx:com.samsung.sami.cloudconnector.api_v1.Context,in:com.samsung.sami.cloudconnector.api_v1.RequestDef):org.scalactic.Or[com.samsung.sami.cloudconnector.api_v1.NotificationResponse,com.samsung.sami.cloudconnector.api_v1.Failure]" title="Permalink" target="_top">
+      <a href="../../../../../index.html#com.samsung.sami.cloudconnector.api_v1.CloudConnector@onNotification(ctx:com.samsung.sami.cloudconnector.api_v1.Context,req:com.samsung.sami.cloudconnector.api_v1.RequestDef):org.scalactic.Or[com.samsung.sami.cloudconnector.api_v1.NotificationResponse,com.samsung.sami.cloudconnector.api_v1.Failure]" title="Permalink" target="_top">
         <img src="../../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
