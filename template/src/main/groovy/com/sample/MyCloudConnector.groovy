@@ -53,7 +53,7 @@ class MyCloudConnector extends CloudConnector {
     }
 
     // @Override
-    // Or<Option<DeviceInfo>,Failure> onSubscribeResponse(Context ctx, RequestDef req,  DeviceInfo info, Response res) {
+    // Or<Option<DeviceInfo>,Failure> onUnsubscribeResponse(Context ctx, RequestDef req,  DeviceInfo info, Response res) {
     //   super.onUnsubscribeResponse(ctx, req, info, res)
     // }
 
