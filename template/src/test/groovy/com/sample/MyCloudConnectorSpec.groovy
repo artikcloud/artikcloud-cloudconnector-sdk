@@ -44,7 +44,7 @@ class MyCloudConnectorSpec extends Specification {
 
 		def "send action to cloud when receiving SAMI action"() {
 			when:
-			def action = new ActionDef("sdid", "ddid", System.currentTimeMillis(), "setValue", '{"value":"foo"}')
+			def action = new ActionDef(Option.apply("sdid"), "ddid", System.currentTimeMillis(), "setValue", '{"value":"foo"}')
 			def fakeDevice = new DeviceInfo(
 				"ddid", 
 				Option.apply("extId"), 
@@ -68,7 +68,7 @@ class MyCloudConnectorSpec extends Specification {
 
 		def "reject unkown action"() {
 			when:
-			def action = new ActionDef("sdid", "ddid", System.currentTimeMillis(), "bar", '{"value":"foo"}')
+			def action = new ActionDef(Option.apply("sdid"), "ddid", System.currentTimeMillis(), "bar", '{"value":"foo"}')
 			def fakeDevice = new DeviceInfo(
 				"ddid", 
 				Option.apply("extId"), 
