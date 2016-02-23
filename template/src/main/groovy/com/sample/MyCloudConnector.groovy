@@ -54,7 +54,7 @@ class MyCloudConnector extends CloudConnector {
 
     // @Override
     // Or<Option<DeviceInfo>,Failure> onUnsubscribeResponse(Context ctx, RequestDef req,  DeviceInfo info, Response res) {
-    //   super.onUnsubscribeResponse(ctx, req, info, res)
+    //   new Good(Empty.option())
     // }
 
     // -----------------------------------------
