@@ -126,9 +126,7 @@ class MyCloudConnector extends CloudConnector {
                 def req = new RequestDef("${ctx.parameters().endpoint}/actions/${extId}/setValue")
                               .withMethod(HttpMethod.Post)
                               .withContent("{\"value\":\"${valueToSend}\"}", "application/json")
-                return new Good(new ActionResponse([
-                    new ActionRequest(new BySamiDeviceId(did), [req])
-                ]))
+                return new Good(new ActionResponse([new ActionRequest([req])]))
             default:        
                 return new Bad(new Failure("Unknown action: ${action.name}"))
         }

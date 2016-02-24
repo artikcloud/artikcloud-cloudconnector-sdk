@@ -56,7 +56,6 @@ class MyCloudConnectorSpec extends Specification {
 			actionRes.isGood()
 			actionRes.get() == new ActionResponse([
 				new ActionRequest(
-					new BySamiDeviceId("ddid"), 
 					[
 						new RequestDef("${ctx.parameters().endpoint}/actions/extId/setValue")
 							.withMethod(HttpMethod.Post)
