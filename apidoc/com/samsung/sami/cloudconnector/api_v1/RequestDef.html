@@ -603,7 +603,7 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.samsung.sami.cloudconnector.api_v1.RequestDef#withBodyParams" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="com.samsung.sami.cloudconnector.api_v1.RequestDef#withBodyParams" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="withBodyParams(v:java.util.Map[String,String]):com.samsung.sami.cloudconnector.api_v1.RequestDef"></a>
       <a id="withBodyParams(Map[String,String]):RequestDef"></a>
       <h4 class="signature">
@@ -619,7 +619,12 @@
         <img src="../../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Convert the given Map to request body accordingly to the set content-type.</p><div class="fullcomment"><div class="comment cmt"><p>Convert the given Map to request body accordingly to the set content-type. Supported content-type are:
+- application/json
+- multipart/form-data
+- application/x-www-form-urlencoded (default)
+If used, 'withContent' method is ignored.
+</p></div></div>
     </li><li name="com.samsung.sami.cloudconnector.api_v1.RequestDef#withContent" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="withContent(v:String,contentType:String):com.samsung.sami.cloudconnector.api_v1.RequestDef"></a>
       <a id="withContent(String,String):RequestDef"></a>
@@ -633,6 +638,23 @@
       </span>
       </h4><span class="permalink">
       <a href="../../../../../index.html#com.samsung.sami.cloudconnector.api_v1.RequestDef@withContent(v:String,contentType:String):com.samsung.sami.cloudconnector.api_v1.RequestDef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.samsung.sami.cloudconnector.api_v1.RequestDef#withContentType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withContentType(v:String):com.samsung.sami.cloudconnector.api_v1.RequestDef"></a>
+      <a id="withContentType(String):RequestDef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withContentType</span><span class="params">(<span name="v">v: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="" class="extype" name="com.samsung.sami.cloudconnector.api_v1.RequestDef">RequestDef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.samsung.sami.cloudconnector.api_v1.RequestDef@withContentType(v:String):com.samsung.sami.cloudconnector.api_v1.RequestDef" title="Permalink" target="_top">
         <img src="../../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
