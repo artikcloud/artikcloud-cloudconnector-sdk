@@ -139,22 +139,34 @@ If the third-party cloud requires HTTPS for authentication and notification, the
 
   ```
   # install letsencrypt
+  
   # generate a certificate from the server (my.domain.com)
+  
   DOMAIN=my.domain.com
+  
   sudo ./letsencrypt-auto -d $DOMAIN certonly --standalone
+  
   sudo tar -czvf ../$DOMAIN.tar.gz /etc/letsencrypt/archive/$DOMAIN
   ```
 1. Store the certificate in a keystore (usable by TestServer)
 
   ```
   cd sami-cloudconnector-sdk/<my_cloudconnector>
+  
   tar -xzvf $DOMAIN.tar.gz
+  
   cd etc/letsencrypt/archive/$DOMAIN
+  
   # convert certificate chain + private key to the PKCS#12 file format, select a password of at least 6 characters
+  
   openssl pkcs12 -export -out keystore.pkcs12 -in fullchain1.pem -inkey privkey1.pem
+  
   # convert PKCS#12 file into Java keystore format, use the same password than previously for keystore (source and destination), else you'll have Exception like "java.security.UnrecoverableKeyException: Cannot recover key"
+  
   keytool -importkeystore -srckeystore keystore.pkcs12 -srcstoretype pkcs12 -destkeystore keystore.jks
+  
   # don't need the PKCS#12 file anymore
+  
   rm keystore.pkcs12
   ```
 1. Edit `MyCloudConnectorRun.groovy` to use the keystore with the certificate (don't forget to change the domain name, the path, and the password).
