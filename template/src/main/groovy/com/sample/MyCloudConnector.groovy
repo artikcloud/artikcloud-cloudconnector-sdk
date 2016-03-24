@@ -1,7 +1,7 @@
 // Sample CloudConnector, that can be used as a boostrap to write a new CloudConnector.
 // Every code is commented, because everything is optional.
 // The class can be named as you want no additional import allowed
-// See the javadoc/scaladoc of com.samsung.sami.cloudconnector.api_v1.CloudConnector
+// See the javadoc/scaladoc of cloud.artik.cloudconnector.api_v1.CloudConnector
 package com.sample
 
 import static java.net.HttpURLConnection.*
@@ -13,7 +13,7 @@ import groovy.transform.CompileStatic
 import groovy.transform.ToString
 import groovy.json.JsonSlurper
 import groovy.json.JsonOutput
-import com.samsung.sami.cloudconnector.api_v1.*
+import cloud.artik.cloudconnector.api_v1.*
 import org.joda.time.format.ISODateTimeFormat
 
 //@CompileStatic
@@ -74,7 +74,7 @@ class MyCloudConnector extends CloudConnector {
             new RequestDef("${ctx.parameters().endpoint}/messages/${e}")
         }
 
-        new Good(new NotificationResponse([new ThirdPartyNotification(new BySamiDeviceId(did), dataToFetch)]))
+        new Good(new NotificationResponse([new ThirdPartyNotification(new ByDeviceId(did), dataToFetch)]))
     }
 
     // @Override

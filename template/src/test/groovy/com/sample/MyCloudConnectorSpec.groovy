@@ -8,7 +8,7 @@ import org.scalactic.*
 import scala.Option
 import org.joda.time.format.DateTimeFormat
 import org.joda.time.*
-import com.samsung.sami.cloudconnector.api_v1.*
+import cloud.artik.cloudconnector.api_v1.*
 import utils.FakeContext
 
 class MyCloudConnectorSpec extends Specification {
@@ -35,14 +35,14 @@ class MyCloudConnectorSpec extends Specification {
 			then:
 			res.isGood()
 			res.get() == new NotificationResponse([
-				new ThirdPartyNotification(new BySamiDeviceId(did), [
+				new ThirdPartyNotification(new ByDeviceId(did), [
 					new RequestDef("${ctx.parameters()['endpoint']}/messages/m1"),
 					new RequestDef("${ctx.parameters()['endpoint']}/messages/m2")
 				])
 			])
 		}
 
-		def "send action to cloud when receiving SAMI action"() {
+		def "send action to cloud when receiving ARTIK Cloud action"() {
 			when:
 			def action = new ActionDef(Option.apply("sdid"), "ddid", System.currentTimeMillis(), "setValue", '{"value":"foo"}')
 			def fakeDevice = new DeviceInfo(

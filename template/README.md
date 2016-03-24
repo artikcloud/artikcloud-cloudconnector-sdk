@@ -1,11 +1,11 @@
 This is a template project. Based on it, you can write custom Cloud Connector code, configure parameters, and perform both unit and integration testing. 
 
-Refer to the sibling directories sample-xxx for examples of the Cloud Connector. These Cloud Connectors have been tested and work in production. For example, you can connect a device of type "moves" in the SAMI [User Portal](https://portal.samsungsami.io).
+Refer to the sibling directories sample-xxx for examples of the Cloud Connector. These Cloud Connectors have been tested and work in production. For example, you can connect a device of type "moves" in the ARTIK Cloud [User Portal](https://www.artik.cloud).
 
 # Install
 
 * Pre-requisite: [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) already installed. 
-* Sync the repository that contains the Cloud Connector SDK and the template from [GitHub](https://github.com/samsungsamiio/sami-cloudconnector-sdk).
+* Sync the repository that contains the Cloud Connector SDK and the template from [GitHub](https://github.com/artikcloud/artikcloud-cloudconnector-sdk).
 
 Each command mentioned in this document should be launched from the current project directory, which contains the `build.gradle` file. 
 
@@ -20,7 +20,7 @@ You can compile the template project without changing any code. However, the Clo
  * Edit [src/main/groovy/com/sample/MyCloudConnector.groovy](src/main/groovy/com/sample/MyCloudConnector.groovy)
     * Overwrite necessary methods to process subscription, notifications, and data fetching from the third-party cloud
     * Use the following libraries in Groovy code :
-     * [sami-cloudconnector-api](http://samsungsamiio.github.io/sami-cloudconnector-sdk/apidoc/)
+     * [artikcloud-cloudconnector-api](http://artikcloud.github.io/artikcloud-cloudconnector-sdk/apidoc/)
      * [joda-time 2.3](http://www.joda.org/joda-time/apidocs/index.html) for date and time manipulation
      * [commons-codec 1.10](https://commons.apache.org/proper/commons-codec/archives/1.10/apidocs/index.html)
      * [scalactic 2.2.4](http://www.scalactic.org/), which provides a few helper constructs including classes [Or, Good, Bad](http://www.scalactic.org/user_guide/OrAndEvery)
@@ -38,9 +38,9 @@ You can compile the template project without changing any code. However, the Clo
   ```
 
 ### Integration testing in the local environment:
-You can perform manual integration testing on an HTTP (HTTPS) local server. The local server provides the minimal runtime environment to run the Cloud Connector. On this server, you can test authentication and fetching data from the third-party cloud before uploading your Cloud Connector code to the SAMI [Developer Portal](https://devportal.samsungsami.io/).
+You can perform manual integration testing on an HTTP (HTTPS) local server. The local server provides the minimal runtime environment to run the Cloud Connector. On this server, you can test authentication and fetching data from the third-party cloud before uploading your Cloud Connector code to the ARTIK Cloud [Developer Portal](https://developer.artik.cloud/).
 
- * Edit [src/main/groovy/com/sample/cfg.json](src/main/groovy/com/sample/cfg.json) to set up the authentication from your local test server to the third-party cloud. The information in cfg.json is pretty much the same as the information provided in [Cloud Authentication UI](https://developer.samsungsami.io/sami/sami-documentation/using-cloud-connectors.html#set-authentication-parameters) at the SAMI Developer Portal. Here you will have to use cfg.json instead of the UI to do that. You can refer to the following resources to learn how to write cfg.json:
+ * Edit [src/main/groovy/com/sample/cfg.json](src/main/groovy/com/sample/cfg.json) to set up the authentication from your local test server to the third-party cloud. The information in cfg.json is pretty much the same as the information provided in [Cloud Authentication UI](https://developer.artik.cloud/sami/sami-documentation/using-cloud-connectors.html#set-authentication-parameters) at the ARTIK Cloud Developer Portal. Here you will have to use cfg.json instead of the UI to do that. You can refer to the following resources to learn how to write cfg.json:
     * [cfg.json.sample](src/main/groovy/com/sample/cfg.json.sample) explains each JSON key.
     * sample-xxx/src/main/groovy/\<package\>/cfg.json is for each example cloud.
  * Test the Cloud Connector on a local HTTP server.
@@ -59,17 +59,17 @@ You can perform manual integration testing on an HTTP (HTTPS) local server. The 
     * Start subscribing to a device by loading http://localhost:9080/cloudconnectors/0000/start_subscription in your browser.
     * Follow the instructions displayed on the web page.
     * Generate new data in the third-party application, which triggers the notification from the third-party cloud to your local test server.
-    * In the console, the test server should print a line with "0000: queuing event Event(" for each event generated by MyCloudConnector. One event is for one SAMI message.
+    * In the console, the test server should print a line with "0000: queuing event Event(" for each event generated by MyCloudConnector. One event is for one ARTIK Cloud message.
 
-*After finishing your integration testing, you should change the configuration on the third-party cloud to use SAMI instead of your local test server for authentication and notification.*
+*After finishing your integration testing, you should change the configuration on the third-party cloud to use ARTIK Cloud instead of your local test server for authentication and notification.*
 
 # Notes for MyCloudConnector.groovy
 
-MyCloudConnector is a derived class that extends [CloudConnector](http://samsungsamiio.github.io/sami-cloudconnector-sdk/apidoc/#com.samsung.sami.cloudconnector.api_v1.CloudConnector). Check out the following documentation articles to learn how to code it.
+MyCloudConnector is a derived class that extends [CloudConnector](http://artikcloud.github.io/artikcloud-cloudconnector-sdk/apidoc/#cloud.artik.cloudconnector.api_v1.CloudConnector). Check out the following documentation articles to learn how to code it.
 
- * [High-level view of the methods of CloudConnector class](https://developer.samsungsami.io/sami/sami-documentation/using-cloud-connectors.html#about-the-cloud-connector-groovy-code)
- * [Moves Cloud Connector code explained](https://developer.samsungsami.io/sami/demos-tools/your-first-cloud-connector.html#implementation-details)
- * [CloudConnector API Doc](http://samsungsamiio.github.io/sami-cloudconnector-sdk/apidoc/), which lists functions and structures, and explains goals and usages.
+ * [High-level view of the methods of CloudConnector class](https://developer.artik.cloud/sami/sami-documentation/using-cloud-connectors.html#about-the-cloud-connector-groovy-code)
+ * [Moves Cloud Connector code explained](https://developer.artik.cloud/sami/demos-tools/your-first-cloud-connector.html#implementation-details)
+ * [CloudConnector API Doc](http://artikcloud.github.io/artikcloud-cloudconnector-sdk/apidoc/), which lists functions and structures, and explains goals and usages.
 
 ### Best practices
 
@@ -80,7 +80,7 @@ MyCloudConnector is a derived class that extends [CloudConnector](http://samsung
 
 ### Tips
 
-* Using custom parameters in your Cloud Connector Groovy code improves the flexibility of your code. Please refer to [About custom parameters](https://developer.samsungsami.io/sami/sami-documentation/using-cloud-connectors.html#about-custom-parameters) to learn about custom parameters and how to use them. Per the doc, you add custom parameters to the CUSTOM PARAMETERS table in the Connector Code tab in the Developer Portal. When performing unit and integration testing locally, your Groovy code cannot access custom parameters since the table is not accessbile locally. In order to pass the testing, you edit src/main/groovy/com/sample/cfg.json. Specifically, add all custom parameters in CUSTOM PARAMETERS table to `parameters` JSON object in cfg.json as follows:
+* Using custom parameters in your Cloud Connector Groovy code improves the flexibility of your code. Please refer to [About custom parameters](https://developer.artik.cloud/sami/sami-documentation/using-cloud-connectors.html#about-custom-parameters) to learn about custom parameters and how to use them. Per the doc, you add custom parameters to the CUSTOM PARAMETERS table in the Connector Code tab in the Developer Portal. When performing unit and integration testing locally, your Groovy code cannot access custom parameters since the table is not accessbile locally. In order to pass the testing, you edit src/main/groovy/com/sample/cfg.json. Specifically, add all custom parameters in CUSTOM PARAMETERS table to `parameters` JSON object in cfg.json as follows:
 
 ```
 {
@@ -93,7 +93,7 @@ MyCloudConnector is a derived class that extends [CloudConnector](http://samsung
 }
 ```
 
-* Perform unit and integration testing before submitting the Groovy Code in the SAMI Developer Portal. This will increase the probability that the code is approved by SAMI and it works as you expected. 
+* Perform unit and integration testing before submitting the Groovy Code in the ARTIK Cloud Developer Portal. This will increase the probability that the code is approved by ARTIK Cloud and it works as you expected. 
 * If you want to do type checking, uncomments the class annotation `//@CompileStatic`. Then, JSON manipulation will be more verbose.
 
 ### Unit Tests
@@ -110,9 +110,9 @@ There are more unit test examples in the sample projects, e.g., how to compare J
 
 ### Integration Testing
 
-If you change the package name of `MyCloudConnector.groovy` from `com.sample` to something else (for example, `io.samsungsami.moves`), you will have to modify `build.gradle` file to use the correct package name before running `../gradlew runTestServer`. 
+If you change the package name of `MyCloudConnector.groovy` from `com.sample` to something else (for example, `com.moves`), you will have to modify `build.gradle` file to use the correct package name before running `../gradlew runTestServer`. 
 
-Open `build.gradle` in an editor, and replace `com.sample` in the following code snippet with the correct package name (for example, `io.samsungsami.moves`). 
+Open `build.gradle` in an editor, and replace `com.sample` in the following code snippet with the correct package name (for example, `com.moves`). 
 ```
 task runTestServer(type:JavaExec) {
   main = System.getProperty("exec.mainClass") ?: "utils.MyCloudConnectorRun"
@@ -151,7 +151,7 @@ If the third-party cloud requires HTTPS for authentication and notification, the
 1. Store the certificate in a keystore (usable by TestServer)
 
   ```
-  cd sami-cloudconnector-sdk/<my_cloudconnector>
+  cd artikcloud-cloudconnector-sdk/<my_cloudconnector>
   
   tar -xzvf $DOMAIN.tar.gz
   
