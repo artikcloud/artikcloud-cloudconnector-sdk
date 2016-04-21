@@ -6,12 +6,12 @@ ARTIK Cloud Cloud Connector SDK
 Background
 -----------------------
 
-A device can send its data directly to ARTIK Cloud via [API calls](https://developer.artik.cloud/sami/sami-documentation/sending-and-receiving-data.html). However, some devices already send data to a third-party cloud. In this case, ARTIK Cloud can use the device's cloud, rather than the device, as the data source. You can build what we call a Cloud Connector to bridge ARTIK Cloud to the third-party cloud. ARTIK Cloud can then retrieve the device's data from that cloud.
+A device can send its data directly to ARTIK Cloud via [API calls](https://developer.artik.cloud/documentation/connect-the-data/rest-and-websockets.html). However, some devices already send data to a third-party cloud. In this case, ARTIK Cloud can use the device's cloud, rather than the device, as the data source. You can build what we call a Cloud Connector to bridge ARTIK Cloud to the third-party cloud. ARTIK Cloud can then retrieve the device's data from that cloud.
 
 This repository hosts the Cloud Connector SDK. You can write Cloud Connector Groovy code using this SDK.
 
- * [Using Cloud Connectors](https://developer.artik.cloud/sami/sami-documentation/using-cloud-connectors.html) gives the overview of the Cloud Connector concept.
- * [Your first Cloud Connector](https://developer.artik.cloud/sami/demos-tools/your-first-cloud-connector.html) explains the developer workflow and Cloud Connector code, using Moves as an example.
+ * [Using Cloud Connectors](https://developer.artik.cloud/documentation/connect-the-data/using-cloud-connectors.html) gives the overview of the Cloud Connector concept.
+ * [Your first Cloud Connector](https://developer.artik.cloud/documentation/tutorials/your-first-cloud-connector.html) explains the developer workflow and Cloud Connector code, using Moves as an example.
  * [CloudConnector API Doc](http://artikcloud.github.io/artikcloud-cloudconnector-sdk/apidoc/) lists functions and structures, and explains goals and usages.
  * [CloudConnector Samples](https://github.com/artikcloud/artikcloud-cloudconnector-samples), the examples have been tested and work in production.
 

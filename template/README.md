@@ -40,7 +40,7 @@ You can compile the template project without changing any code. However, the Clo
 ### Integration testing in the local environment:
 You can perform manual integration testing on an HTTP (HTTPS) local server. The local server provides the minimal runtime environment to run the Cloud Connector. On this server, you can test authentication and fetching data from the third-party cloud before uploading your Cloud Connector code to the ARTIK Cloud [Developer Portal](https://developer.artik.cloud/).
 
- * Edit [src/main/groovy/com/sample/cfg.json](src/main/groovy/com/sample/cfg.json) to set up the authentication from your local test server to the third-party cloud. The information in cfg.json is pretty much the same as the information provided in [Cloud Authentication UI](https://developer.artik.cloud/sami/sami-documentation/using-cloud-connectors.html#set-authentication-parameters) at the ARTIK Cloud Developer Portal. Here you will have to use cfg.json instead of the UI to do that. You can refer to the following resources to learn how to write cfg.json:
+ * Edit [src/main/groovy/com/sample/cfg.json](src/main/groovy/com/sample/cfg.json) to set up the authentication from your local test server to the third-party cloud. The information in cfg.json is pretty much the same as the information provided in [Cloud Authentication UI](https://developer.artik.cloud/documentation/connect-the-data/using-cloud-connectors.html#set-authentication-parameters) at the ARTIK Cloud Developer Portal. Here you will have to use cfg.json instead of the UI to do that. You can refer to the following resources to learn how to write cfg.json:
     * [cfg.json.sample](src/main/groovy/com/sample/cfg.json.sample) explains each JSON key.
     * sample-xxx/src/main/groovy/\<package\>/cfg.json is for each example cloud.
  * Test the Cloud Connector on a local HTTP server.
@@ -67,8 +67,8 @@ You can perform manual integration testing on an HTTP (HTTPS) local server. The 
 
 MyCloudConnector is a derived class that extends [CloudConnector](http://artikcloud.github.io/artikcloud-cloudconnector-sdk/apidoc/#cloud.artik.cloudconnector.api_v1.CloudConnector). Check out the following documentation articles to learn how to code it.
 
- * [High-level view of the methods of CloudConnector class](https://developer.artik.cloud/sami/sami-documentation/using-cloud-connectors.html#about-the-cloud-connector-groovy-code)
- * [Moves Cloud Connector code explained](https://developer.artik.cloud/sami/demos-tools/your-first-cloud-connector.html#implementation-details)
+ * [High-level view of the methods of CloudConnector class](https://developer.artik.cloud/documentation/connect-the-data/using-cloud-connectors.html#about-the-cloud-connector-groovy-code)
+ * [Moves Cloud Connector code explained](https://developer.artik.cloud/documentation/tutorials/your-first-cloud-connector.html#implementation-details)
  * [CloudConnector API Doc](http://artikcloud.github.io/artikcloud-cloudconnector-sdk/apidoc/), which lists functions and structures, and explains goals and usages.
 
 ### Best practices
@@ -80,7 +80,7 @@ MyCloudConnector is a derived class that extends [CloudConnector](http://artikcl
 
 ### Tips
 
-* Using custom parameters in your Cloud Connector Groovy code improves the flexibility of your code. Please refer to [About custom parameters](https://developer.artik.cloud/sami/sami-documentation/using-cloud-connectors.html#about-custom-parameters) to learn about custom parameters and how to use them. Per the doc, you add custom parameters to the CUSTOM PARAMETERS table in the Connector Code tab in the Developer Portal. When performing unit and integration testing locally, your Groovy code cannot access custom parameters since the table is not accessbile locally. In order to pass the testing, you edit src/main/groovy/com/sample/cfg.json. Specifically, add all custom parameters in CUSTOM PARAMETERS table to `parameters` JSON object in cfg.json as follows:
+* Using custom parameters in your Cloud Connector Groovy code improves the flexibility of your code. Please refer to [About custom parameters](https://developer.artik.cloud/documentation/connect-the-data/using-cloud-connectors.html#about-custom-parameters) to learn about custom parameters and how to use them. Per the doc, you add custom parameters to the CUSTOM PARAMETERS table in the Connector Code tab in the Developer Portal. When performing unit and integration testing locally, your Groovy code cannot access custom parameters since the table is not accessbile locally. In order to pass the testing, you edit src/main/groovy/com/sample/cfg.json. Specifically, add all custom parameters in CUSTOM PARAMETERS table to `parameters` JSON object in cfg.json as follows:
 
 ```
 {
