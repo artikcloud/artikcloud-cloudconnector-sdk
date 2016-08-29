@@ -523,6 +523,27 @@ Default impl:</p><pre>Bad(Failure(<span class="lit">"unsupported : method onNoti
       <p class="shortcomment cmt">Callback_4: Parse and check (authorisation) pushed data (data come from Notification and can be transformed)
 Default impl:</p><div class="fullcomment"><div class="comment cmt"><p>Callback_4: Parse and check (authorisation) pushed data (data come from Notification and can be transformed)
 Default impl:</p><pre>Bad(Failure(<span class="lit">"unsupported: method onNotificationData should be implemented"</span>))</pre></div></div>
+    </li><li name="cloud.artik.cloudconnector.api_v1.CloudConnector#onReceivedOauth2Code" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="onReceivedOauth2Code(ctx:cloud.artik.cloudconnector.api_v1.Context,req:cloud.artik.cloudconnector.api_v1.RequestDef):org.scalactic.Or[cloud.artik.cloudconnector.api_v1.RequestDef,cloud.artik.cloudconnector.api_v1.Failure]"></a>
+      <a id="onReceivedOauth2Code(Context,RequestDef):Or[RequestDef,Failure]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">onReceivedOauth2Code</span><span class="params">(<span name="ctx">ctx: <a href="Context.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Context">Context</a></span>, <span name="req">req: <a href="RequestDef.html" class="extype" name="cloud.artik.cloudconnector.api_v1.RequestDef">RequestDef</a></span>)</span><span class="result">: <span class="extype" name="org.scalactic.Or">Or</span>[<a href="RequestDef.html" class="extype" name="cloud.artik.cloudconnector.api_v1.RequestDef">RequestDef</a>, <a href="Failure.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Failure">Failure</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.CloudConnector@onReceivedOauth2Code(ctx:cloud.artik.cloudconnector.api_v1.Context,req:cloud.artik.cloudconnector.api_v1.RequestDef):org.scalactic.Or[cloud.artik.cloudconnector.api_v1.RequestDef,cloud.artik.cloudconnector.api_v1.Failure]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sometimes the third-party cloud doesn't follow the OAuth2 RFC
+(eg it doesn't send code as a query paramater)
+This method allow to &quot;normalize&quot; the incoming request with OAuth2 code.</p><div class="fullcomment"><div class="comment cmt"><p>Sometimes the third-party cloud doesn't follow the OAuth2 RFC
+(eg it doesn't send code as a query paramater)
+This method allow to &quot;normalize&quot; the incoming request with OAuth2 code.</p><p>Default impl: (keep as is)</p><pre>Good(req)</pre></div></div>
     </li><li name="cloud.artik.cloudconnector.api_v1.CloudConnector#onSubscribeResponse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="onSubscribeResponse(ctx:cloud.artik.cloudconnector.api_v1.Context,req:cloud.artik.cloudconnector.api_v1.RequestDef,info:cloud.artik.cloudconnector.api_v1.DeviceInfo,res:cloud.artik.cloudconnector.api_v1.Response):org.scalactic.Or[Option[cloud.artik.cloudconnector.api_v1.DeviceInfo],cloud.artik.cloudconnector.api_v1.Failure]"></a>
       <a id="onSubscribeResponse(Context,RequestDef,DeviceInfo,Response):Or[Option[DeviceInfo],Failure]"></a>
