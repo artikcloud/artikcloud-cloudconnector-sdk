@@ -8,11 +8,19 @@ import org.scalactic.*
 import scala.Option
 import cloud.artik.cloudconnector.api_v1.*
 import utils.FakeContext
+import static utils.Tools.*
 
 class MyCloudConnectorSpec extends Specification {
 
     def sut = new MyCloudConnector()
     def ctx = new FakeContext()
+
+    def did = "did000"
+    def info = new DeviceInfo(did, Option.apply(did),
+        new Credentials(AuthType.OAuth2, "", "ACCESSTOKEN000", Empty.option(), Option.apply("bearer"), ctx.scope(), Empty.option()),
+        ctx.cloudId(),
+        Empty.option()
+    )
 
     def "reject Notification without NotificationId"() {
       when:
@@ -78,4 +86,18 @@ class MyCloudConnectorSpec extends Specification {
       then:
       actionRes.isBad()
     }
+
+    def "process response from /devices"() {
+        when:
+            def req = new RequestDef("${ctx.parameters()['endpoint']}/messages/eid00")
+            def resp = readResponse(req) //content in test/resources/responses/<verb>.<path with / replaced by _>.<num "01" by default>.json
+            def res = sut.onFetchResponse(ctx, req, info, resp)
+        then:
+            res.isGood()
+            //res.get()[0] == new Event(1472223806000,"""hello""", EventType.data)
+            cmpEvents(res.get(),[
+                new Event(1472223806000, """hello""", EventType.data)
+            ])
+    }
+
 }

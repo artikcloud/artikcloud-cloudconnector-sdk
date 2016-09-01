@@ -116,10 +116,16 @@ class MyCloudConnector extends CloudConnector {
                     ctx.debug("ignore response valid respond: '${res.content}'")
                     return new Good([])
                 } else if (res.contentType.startsWith(CT_JSON)) {
-                    def json = slurper.parseText(content)
-                    def ts = (json.datetime) ? Instant.from(ZonedDateTime.parse(json.datetime, mdateFormat)).toEpochMilli() : ctx.now()
-                    //return new Good([new Event(ts, JsonOutput.toJson(slurper.parseText(json.message)))])
-                    return new Good([new Event(ts, json.message)])
+                    if (req.url.startsWith("${ctx.parameters().endpoint}/messages/")) {
+                        def json = slurper.parseText(content)
+                        def ts = (json.datetime) ? Instant.from(ZonedDateTime.parse(json.datetime, mdateFormat)).toEpochMilli() : ctx.now()
+                        //return new Good([new Event(ts, JsonOutput.toJson(slurper.parseText(json.message)))])
+                        return new Good([new Event(ts, json.message)])
+                    } else if (req.url.startsWith("${ctx.parameters().endpoint}/actions/")) {
+                        // ignore response to action
+                        return new Good([])
+                    }
+                    return new Bad(new Failure("unsupported request ${req.url}"))
                 }
                 return new Bad(new Failure("unsupported response ${res} ... ${res.contentType} .. ${res.contentType.startsWith(CT_JSON)}"))
             default:
