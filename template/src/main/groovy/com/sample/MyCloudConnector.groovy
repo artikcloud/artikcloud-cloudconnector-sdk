@@ -31,6 +31,21 @@ class MyCloudConnector extends CloudConnector {
         new Good(req.addHeaders(['Authorization':'Bearer ' + info.credentials.token]))
     }
 
+    //@Override
+    //Or<RequestDef, Failure> normalizeOauth2Code(Context ctx, RequestDef req) {
+    //    new Good(req)
+    //}
+
+    //@Override
+    //Or<RequestDef, Failure> normalizeOauth2Token(Context ctx, Response resp, Phase phase) {
+    //    Good(resp)
+    //}
+
+    //@Override
+    //Or<CustomAuthenticationTask, Failure> onCustomAuthentication(Context ctx, RequestDef req, Option<Response> resp) {
+    //  new Bad(new Failure("unsupported: method onCustomAuthentication should be implemented"))
+    //}
+
     // -----------------------------------------
     // SUBSCRIPTION
     // -----------------------------------------
