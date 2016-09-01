@@ -14,6 +14,7 @@ import groovy.json.JsonOutput
 import java.time.*
 import java.time.format.DateTimeFormatter
 import cloud.artik.cloudconnector.api_v1.*
+import scala.Option
 
 //@CompileStatic
 class MyCloudConnector extends CloudConnector {
@@ -76,25 +77,34 @@ class MyCloudConnector extends CloudConnector {
     // -----------------------------------------
     @Override
     Or<NotificationResponse, Failure> onNotification(Context ctx, RequestDef req) {
-        def did = req.headers()['notificationId']
-        if (did == null) {
-            ctx.debug('Bad notification (where is did in following req : ) ' + req)
-            return new Bad(new Failure('Impossible to recover device id from token request.'))
-        }
-        def content = req.content()
-        def json = slurper.parseText(content)
+        ctx.debug("onNotification: " + req)
+        if (req.url.endsWith("thirdpartynotifications/postsubscription")) {
+            def did = slurper.parseText(req.content())?.did
+            //return new Good(new NotificationResponse([new ThirdPartyNotification(new ByDeviceId(did), [])]))
+            return Good(new NotificationResponse([]))
+        } else if (req.contentType() == CT_JSON && req.content().trim().length() > 0) {
+            def did = req.headers()['notificationId']
+            if (did == null) {
+                ctx.debug('Bad notification (where is did in following req : ) ' + req)
+                return new Bad(new Failure('Impossible to recover device id from token request.'))
+            }
+            def content = req.content()
+            def json = slurper.parseText(content)
 
-        def dataToFetch = json.messages.collect { e ->
-            new RequestDef("${ctx.parameters().endpoint}/messages/${e}")
+            def dataToFetch = json.messages.collect { e ->
+                new RequestDef("${ctx.parameters().endpoint}/messages/${e}")
+            }
+            return new Good(new NotificationResponse([new ThirdPartyNotification(new ByDeviceId(did), dataToFetch)]))
+        } else {
+            // nothing todo
+            return new Good(new NotificationResponse([]))
         }
-
-        new Good(new NotificationResponse([new ThirdPartyNotification(new ByDeviceId(did), dataToFetch)]))
     }
 
     // @Override
-  	// Or<RequestDef, Failure> fetch(Context ctx, RequestDef req, DeviceInfo info) {
-  	// 	new Good(req.addQueryParams(['userId' : info.extId().getOrElse(null)]))
-  	// }
+    // Or<RequestDef, Failure> fetch(Context ctx, RequestDef req, DeviceInfo info) {
+    //    new Good(req.addQueryParams(['userId' : info.extId().getOrElse(null)]))
+    // }
 
     @Override
     Or<List<Event>, Failure> onFetchResponse(Context ctx, RequestDef req, DeviceInfo info, Response res) {
@@ -113,12 +123,12 @@ class MyCloudConnector extends CloudConnector {
                 }
                 return new Bad(new Failure("unsupported response ${res} ... ${res.contentType} .. ${res.contentType.startsWith(CT_JSON)}"))
             default:
-                return new Bad(new Failure("http status : ${res.status} is not OK (${HTTP_OK})"))
+                return new Bad(new Failure("http status : ${res.status} is not OK (${HTTP_OK}) on ${req.method} ${req.url}"))
         }
     }
 
     // Or<List<Event>, Failure> onNotificationData(Context ctx, DeviceInfo info, String data) {
-  	// 	new Bad(new Failure("unsupported: method onNotificationData should be implemented"))
+    //     new Bad(new Failure("unsupported: method onNotificationData should be implemented"))
     // }
 
     @Override
@@ -139,9 +149,9 @@ class MyCloudConnector extends CloudConnector {
 
                 def req = new RequestDef("${ctx.parameters().endpoint}/actions/${extId}/setValue")
                               .withMethod(HttpMethod.Post)
-                              .withContent("{\"value\":\"${valueToSend}\"}", "application/json")
+                              .withContent("""{"value":"${valueToSend}"}""", CT_JSON)
                 return new Good(new ActionResponse([new ActionRequest([req])]))
-            default:        
+            default:
                 return new Bad(new Failure("Unknown action: ${action.name}"))
         }
     }

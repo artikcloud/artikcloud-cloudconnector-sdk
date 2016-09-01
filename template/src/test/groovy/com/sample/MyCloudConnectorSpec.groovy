@@ -17,6 +17,8 @@ class MyCloudConnectorSpec extends Specification {
     def "reject Notification without NotificationId"() {
       when:
       def req = new RequestDef("https://foo/cloudconnector/dt00/thirdpartynotification")
+        .withContent("{}", "application/json")
+        .withMethod(HttpMethod.Post)
       def res = sut.onNotification(ctx, req)
       then:
       res.isBad()
