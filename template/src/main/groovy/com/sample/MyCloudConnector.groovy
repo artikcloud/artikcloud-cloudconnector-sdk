@@ -7,18 +7,17 @@ package com.sample
 import static java.net.HttpURLConnection.*
 
 import org.scalactic.*
-import org.joda.time.format.DateTimeFormat
-import org.joda.time.*
 import groovy.transform.CompileStatic
 import groovy.transform.ToString
 import groovy.json.JsonSlurper
 import groovy.json.JsonOutput
+import java.time.*
+import java.time.format.DateTimeFormatter
 import cloud.artik.cloudconnector.api_v1.*
-import org.joda.time.format.ISODateTimeFormat
 
 //@CompileStatic
 class MyCloudConnector extends CloudConnector {
-    static mdateFormat = DateTimeFormat.forPattern('yyyy-MM-dd HH:mm:ss').withZoneUTC()
+    static mdateFormat = DateTimeFormatter.ofPattern('yyyy-MM-dd HH:mm:ss').withZone(ZoneOffset.UTC)
     static final CT_JSON = 'application/json'
 
     JsonSlurper slurper = new JsonSlurper()
@@ -93,7 +92,7 @@ class MyCloudConnector extends CloudConnector {
                     return new Good([])
                 } else if (res.contentType.startsWith(CT_JSON)) {
                     def json = slurper.parseText(content)
-                    def ts = (json.datetime) ? DateTime.parse(json.datetime, mdateFormat).millis : ctx.now()
+                    def ts = (json.datetime) ? Instant.from(ZonedDateTime.parse(json.datetime, mdateFormat)).toEpochMilli() : ctx.now()
                     //return new Good([new Event(ts, JsonOutput.toJson(slurper.parseText(json.message)))])
                     return new Good([new Event(ts, json.message)])
                 }

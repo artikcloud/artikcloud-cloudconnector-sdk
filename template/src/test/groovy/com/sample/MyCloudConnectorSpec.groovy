@@ -6,8 +6,6 @@ import static java.net.HttpURLConnection.*
 import spock.lang.*
 import org.scalactic.*
 import scala.Option
-import org.joda.time.format.DateTimeFormat
-import org.joda.time.*
 import cloud.artik.cloudconnector.api_v1.*
 import utils.FakeContext
 
@@ -46,8 +44,8 @@ class MyCloudConnectorSpec extends Specification {
 			when:
 			def action = new ActionDef(Option.apply("sdid"), "ddid", System.currentTimeMillis(), "setValue", '{"value":"foo"}')
 			def fakeDevice = new DeviceInfo(
-				"ddid", 
-				Option.apply("extId"), 
+				"ddid",
+				Option.apply("extId"),
 				new Credentials(AuthType.OAuth2, "", "", Empty.option(), Option.apply("bearer"), ctx.scope(), Empty.option()), ctx.cloudId(), Empty.option()
 			)
 			def actionRes = sut.onAction(ctx, action, fakeDevice)
@@ -61,7 +59,7 @@ class MyCloudConnectorSpec extends Specification {
 							.withMethod(HttpMethod.Post)
 							.withContent('{"value":"foo"}', "application/json")
 					]
-				)	
+				)
 			])
 		}
 
@@ -69,8 +67,8 @@ class MyCloudConnectorSpec extends Specification {
 			when:
 			def action = new ActionDef(Option.apply("sdid"), "ddid", System.currentTimeMillis(), "bar", '{"value":"foo"}')
 			def fakeDevice = new DeviceInfo(
-				"ddid", 
-				Option.apply("extId"), 
+				"ddid",
+				Option.apply("extId"),
 				new Credentials(AuthType.OAuth2, "", "", Empty.option(), Option.apply("bearer"), ctx.scope(), Empty.option()), ctx.cloudId(), Empty.option()
 			)
 			def actionRes = sut.onAction(ctx, action, fakeDevice)
