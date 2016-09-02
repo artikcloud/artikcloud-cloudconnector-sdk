@@ -254,6 +254,40 @@
       </a>
     </span>
       
+    </li><li name="cloud.artik.cloudconnector.api_v1.CustomAuthenticationTask" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="CustomAuthenticationTaskextendsAnyRef"></a>
+      <a id="CustomAuthenticationTask:CustomAuthenticationTask"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="CustomAuthenticationTask.html"><span class="name">CustomAuthenticationTask</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.package@CustomAuthenticationTaskextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cloud.artik.cloudconnector.api_v1.CustomCredentials" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CustomCredentialsextendsCustomAuthenticationTaskwithProductwithSerializable"></a>
+      <a id="CustomCredentials:CustomCredentials"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="CustomCredentials.html"><span class="name">CustomCredentials</span></a><span class="params">(<span name="extId">extId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="credentials">credentials: <a href="Credentials.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Credentials">Credentials</a></span>)</span><span class="result"> extends <a href="CustomAuthenticationTask.html" class="extype" name="cloud.artik.cloudconnector.api_v1.CustomAuthenticationTask">CustomAuthenticationTask</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.package@CustomCredentialsextendsCustomAuthenticationTaskwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
     </li><li name="cloud.artik.cloudconnector.api_v1.DeviceInfo" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="DeviceInfoextendsProductwithSerializable"></a>
       <a id="DeviceInfo:DeviceInfo"></a>
@@ -297,7 +331,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="Event.html"><span class="name">Event</span></a><span class="params">(<span name="ts">ts: <span class="extype" name="scala.Long">Long</span></span>, <span name="payload">payload: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="kind">kind: <a href="EventType.html" class="extype" name="cloud.artik.cloudconnector.api_v1.EventType">EventType</a> = <span class="symbol">EventType.data</span></span>, <span name="extSdid">extSdid: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="Task.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Task">Task</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a href="Event.html"><span class="name">Event</span></a><span class="params">(<span name="ts">ts: <span class="extype" name="scala.Long">Long</span></span>, <span name="payload">payload: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="kind">kind: <a href="EventType.html" class="extype" name="cloud.artik.cloudconnector.api_v1.EventType">EventType</a> = <span class="symbol">EventType.data</span></span>, <span name="extSdid">extSdid: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="extSdtid">extSdtid: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="Task.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Task">Task</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.package@EventextendsTaskwithProductwithSerializable" title="Permalink" target="_top">
@@ -356,6 +390,23 @@
       </a>
     </span>
       
+    </li><li name="cloud.artik.cloudconnector.api_v1.InputField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InputFieldextendsProductwithSerializable"></a>
+      <a id="InputField:InputField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="InputField.html"><span class="name">InputField</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="label">label: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="inputType">inputType: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="help">help: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="error">error: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.package@InputFieldextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
     </li><li name="cloud.artik.cloudconnector.api_v1.NotificationResponse" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="NotificationResponseextendsProductwithSerializable"></a>
       <a id="NotificationResponse:NotificationResponse"></a>
@@ -408,7 +459,7 @@
     </span>
       
     </li><li name="cloud.artik.cloudconnector.api_v1.RequestDef" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="RequestDefextendsTaskwithProductwithSerializable"></a>
+      <a id="RequestDefextendsTaskwithCustomAuthenticationTaskwithProductwithSerializable"></a>
       <a id="RequestDef:RequestDef"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -416,10 +467,10 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="RequestDef.html"><span class="name">RequestDef</span></a><span class="params">(<span name="url">url: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="method">method: <a href="HttpMethod.html" class="extype" name="cloud.artik.cloudconnector.api_v1.HttpMethod">HttpMethod</a> = <span class="symbol">HttpMethod.Get</span></span>, <span name="queryParams">queryParams: <span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="Empty$.html">Empty.map</a></span></span></span>, <span name="headers">headers: <span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="Empty$.html">Empty.map</a></span></span></span>, <span name="bodyParams">bodyParams: <span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="Empty$.html">Empty.map</a></span></span></span>, <span name="contentType">contentType: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;text/plain&quot;</span></span>, <span name="content">content: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="signature">signature: <span class="extype" name="scala.Option">Option</span>[<a href="SignatureDataForOAuth.html" class="extype" name="cloud.artik.cloudconnector.api_v1.SignatureDataForOAuth">SignatureDataForOAuth</a>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="Task.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Task">Task</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a href="RequestDef.html"><span class="name">RequestDef</span></a><span class="params">(<span name="url">url: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="method">method: <a href="HttpMethod.html" class="extype" name="cloud.artik.cloudconnector.api_v1.HttpMethod">HttpMethod</a> = <span class="symbol">HttpMethod.Get</span></span>, <span name="queryParams">queryParams: <span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="Empty$.html">Empty.map</a></span></span></span>, <span name="headers">headers: <span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="Empty$.html">Empty.map</a></span></span></span>, <span name="bodyParams">bodyParams: <span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="Empty$.html">Empty.map</a></span></span></span>, <span name="contentType">contentType: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;text/plain&quot;</span></span>, <span name="content">content: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="signature">signature: <span class="extype" name="scala.Option">Option</span>[<a href="SignatureDataForOAuth.html" class="extype" name="cloud.artik.cloudconnector.api_v1.SignatureDataForOAuth">SignatureDataForOAuth</a>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="Task.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Task">Task</a> with <a href="CustomAuthenticationTask.html" class="extype" name="cloud.artik.cloudconnector.api_v1.CustomAuthenticationTask">CustomAuthenticationTask</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.package@RequestDefextendsTaskwithProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.package@RequestDefextendsTaskwithCustomAuthenticationTaskwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -505,6 +556,23 @@
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.package@ThirdPartyNotificationextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cloud.artik.cloudconnector.api_v1.UserFormRequest" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="UserFormRequestextendsCustomAuthenticationTaskwithProductwithSerializable"></a>
+      <a id="UserFormRequest:UserFormRequest"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="UserFormRequest.html"><span class="name">UserFormRequest</span></a><span class="params">(<span name="title">title: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="fields">fields: <span class="extype" name="java.util.List">List</span>[<a href="InputField.html" class="extype" name="cloud.artik.cloudconnector.api_v1.InputField">InputField</a>]</span>, <span name="help">help: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="error">error: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result"> extends <a href="CustomAuthenticationTask.html" class="extype" name="cloud.artik.cloudconnector.api_v1.CustomAuthenticationTask">CustomAuthenticationTask</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.package@UserFormRequestextendsCustomAuthenticationTaskwithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
