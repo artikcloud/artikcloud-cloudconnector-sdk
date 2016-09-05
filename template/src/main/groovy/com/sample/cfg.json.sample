@@ -33,7 +33,7 @@
 
     // Authorization protocol to connect to third party cloud.
     // optional default: "OAuth2"
-    // type: value from ["OAuth1", "OAuth2"]
+    // type: value from ["OAuth1", "OAuth2", "CustomAuth", "None"]
     "authType": "OAuth2",
 
     // Http status to return when third party cloud send notification.
@@ -61,20 +61,20 @@
     // optional default: true
     // type: boolean
     "use10a": true,
- 
+
     //--- used by OAuth 2 only ---
 
     // Http's method to use to request access token
     // valid: ["get", "post"]
     // optional default: "get"
     "accessTokenMethod": "get",
- 
+
     // List of permissions / scope to request on third party cloud : Used by Oauth2 only.
     // type: list of string
     // UI: a single textfield with space separated value (standard), the UI should split the string into a list
     // Optional , default = []
     "scope": [],
- 
+
     // A Mapping table used to rename parameters on authorization request on Oauth2.
     // https://tools.ietf.org/html/rfc6749#section-4.1.1
     // Existing parameter name : "scope", "response_type", "client_id", "state", "redirect_uri"

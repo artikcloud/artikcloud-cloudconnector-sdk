@@ -42,10 +42,34 @@ class MyCloudConnector extends CloudConnector {
     //    Good(resp)
     //}
 
-    //@Override
-    //Or<CustomAuthenticationTask, Failure> onCustomAuthentication(Context ctx, RequestDef req, Option<Response> resp) {
-    //  new Bad(new Failure("unsupported: method onCustomAuthentication should be implemented"))
-    //}
+    // @Override
+    // Or<CustomAuthenticationTask, Failure> onCustomAuthentication(Context ctx, RequestDef req, Option<Response> resp) {
+    //     ctx.debug(req)
+    //     if (resp.isDefined()) {
+    //         // TODO process response of request to 3rd party cloud if needed
+    //     } else  if (req.method() == HttpMethod.Get) {
+    //         // start auth (display user form - first time)
+    //         return new Good(new UserFormRequest("Test custom auth", [
+    //             new InputField("username", "username"),
+    //             new InputField("password", "password").withInputType("password")
+    //         ]))
+    //     } else {
+    //         // handle user form
+    //         def jsonForm = slurper.parseText(req.content())
+    //         def user = jsonForm?.username?.get(0)
+    //         def pwd = jsonForm?.password?.get(0)
+    //         // In normal use case, call external cloud with a RequestDef and handle the response with Option<Response>
+    //         // Here, we hardcode credentials
+    //         if (user == "user" && pwd == "password") {
+    //             return new Good(new CustomCredentials("myToken"))
+    //         } else {
+    //             return new Good(new UserFormRequest("Test custom auth", [
+    //                 new InputField("username", "username").withError("Invalid username or password"),
+    //                 new InputField("password", "password").withInputType("password").withError("Invalid username or password")
+    //             ]))
+    //         }
+    //     }
+    // }
 
     // -----------------------------------------
     // SUBSCRIPTION
