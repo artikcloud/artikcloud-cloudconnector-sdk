@@ -95,7 +95,7 @@ class MyCloudConnectorSpec extends Specification {
         then:
             res.isGood()
             //res.get()[0] == new Event(1472223806000,"""hello""", EventType.data)
-            cmpEvents(res.get(),[
+            cmpTasks(res.get(),[
                 new Event(1472223806000, """hello""", EventType.data)
             ])
     }

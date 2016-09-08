@@ -3,6 +3,9 @@ package utils
 import spock.lang.*
 import groovy.json.JsonSlurper
 import cloud.artik.cloudconnector.api_v1.*
+import static org.hamcrest.MatcherAssert.assertThat
+import static org.hamcrest.core.IsCollectionContaining.*
+import static org.hamcrest.core.IsEqual.*
 
 class Tools {
     static def parser = new JsonSlurper()
@@ -25,14 +28,21 @@ class Tools {
         caller.getClass().getResource(path).getText('UTF-8')
     }
 
-    static def cmpEvents(Collection<Event> l1, Collection<Event> l2) {
-        eventsPrepareToCmp(l1) == eventsPrepareToCmp(l2)
+    static def cmpTasks(Collection<Task> l1, Collection<Task> l2) {
+        //tasksPrepareToCmp(l1) == tasksPrepareToCmp(l2)
+        assertThat("number of tasks", l1.size(), equalTo(l2.size()))
+        def pl1 = tasksPrepareToCmp(l1)
+        def pl2 = tasksPrepareToCmp(l2)
+        for(i in 0 .. pl1.size()-1) {
+             assertThat(pl1[i], equalTo(pl2[i]))
+        }
+        0 == 0
     }
 
-    static def tryConvertEventToEaseCmp(Event e) {
+    static def tryConvertTaskToEaseCmp (Event e) {
         if (e.kind == EventType.data) {
             try {
-                return [e.ts, parser.parseText(e.payload)]
+                return new Event(e.ts, parser.parseText(e.payload), e.kind, e.extSdid, e.extSdtid)
             } catch(Exception exc) {
                 // ignore => default return
             }
@@ -40,7 +50,11 @@ class Tools {
         return e
     }
 
-    static def eventsPrepareToCmp(Collection<Event> l) {
-        l.collect{tryConvertEventToEaseCmp(it)}.sort()
+    static def tryConvertTaskToEaseCmp(RequestDef e) {
+        return e
+    }
+
+    static def tasksPrepareToCmp(Collection<Event> l) {
+        l.collect{tryConvertTaskToEaseCmp(it)}//.sort()
     }
 }
