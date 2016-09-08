@@ -39,7 +39,7 @@ class MyCloudConnector extends CloudConnector {
 
     //@Override
     //Or<RequestDef, Failure> normalizeOauth2Token(Context ctx, Response resp, Phase phase) {
-    //    Good(resp)
+    //    new Good(resp)
     //}
 
     // @Override
@@ -105,7 +105,7 @@ class MyCloudConnector extends CloudConnector {
         if (req.url.endsWith("thirdpartynotifications/postsubscription")) {
             def did = slurper.parseText(req.content())?.did
             //return new Good(new NotificationResponse([new ThirdPartyNotification(new ByDeviceId(did), [])]))
-            return Good(new NotificationResponse([]))
+            return new Good(new NotificationResponse([]))
         } else if (req.contentType() == CT_JSON && req.content().trim().length() > 0) {
             def did = req.headers()['notificationId']
             if (did == null) {
