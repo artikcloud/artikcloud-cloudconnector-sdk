@@ -2,6 +2,7 @@ package utils
 
 import spock.lang.*
 import groovy.json.JsonSlurper
+import groovy.json.JsonOutput
 import cloud.artik.cloudconnector.api_v1.*
 import static org.hamcrest.MatcherAssert.assertThat
 import static org.hamcrest.core.IsCollectionContaining.*
@@ -42,7 +43,7 @@ class Tools {
     static def tryConvertTaskToEaseCmp (Event e) {
         if (e.kind == EventType.data) {
             try {
-                return new Event(e.ts, parser.parseText(e.payload), e.kind, e.extSdid, e.extSdtid)
+                return new Event(e.ts, JsonOutput.toJson(parser.parseText(e.payload)), e.kind, e.extSdid, e.extSdtid)
             } catch(Exception exc) {
                 // ignore => default return
             }
