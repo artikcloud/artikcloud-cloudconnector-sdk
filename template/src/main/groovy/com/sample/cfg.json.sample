@@ -82,6 +82,11 @@
     // Optional , default = []
     "scope": [],
 
+    // The grant type mode use to acquire accessToken
+    // valid ["code", "password"]
+    // optional default: "code"
+    "authorizationGrant": "code",
+
     // A Mapping table used to rename parameters on authorization request on Oauth2.
     // https://tools.ietf.org/html/rfc6749#section-4.1.1
     // Existing parameter name : "scope", "response_type", "client_id", "state", "redirect_uri"
