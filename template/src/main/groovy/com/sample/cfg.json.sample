@@ -48,6 +48,13 @@
       "endpoint": "http://..."
     },
 
+    // A Mapping table used to convert external device type into Artik Cloud device type.
+    // It's used when create a (sub) device via an Event.
+    // optional default: null
+    // type: map(string -> string)
+    // eg: {"Air_Conditioner": "dt01", "Robot_Cleaner": "dt02" }
+    "extSdtidsMapper": null,
+
     //--- used by OAuth 1 only ---
 
     // The request token URL provided by the OAuth1 provider.
