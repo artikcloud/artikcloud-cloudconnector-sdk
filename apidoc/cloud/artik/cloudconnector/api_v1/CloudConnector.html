@@ -282,24 +282,24 @@ Default impl: (keep as is)</p><pre>Good(req)</pre></div></div>
               
         </dd></dl></div>
     </li><li name="cloud.artik.cloudconnector.api_v1.CloudConnector#generateWelcomeMessage" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="generateWelcomeMessage(ctx:cloud.artik.cloudconnector.api_v1.Context,deviceInfo:cloud.artik.cloudconnector.api_v1.DeviceInfo,optResponse:Option[cloud.artik.cloudconnector.api_v1.Response]):org.scalactic.Or[cloud.artik.cloudconnector.api_v1.WelcomeTask,cloud.artik.cloudconnector.api_v1.Failure]"></a>
-      <a id="generateWelcomeMessage(Context,DeviceInfo,Option[Response]):Or[WelcomeTask,Failure]"></a>
+      <a id="generateWelcomeMessage(ctx:cloud.artik.cloudconnector.api_v1.Context,info:cloud.artik.cloudconnector.api_v1.DeviceInfo,req:Option[cloud.artik.cloudconnector.api_v1.RequestDef],res:Option[cloud.artik.cloudconnector.api_v1.Response]):org.scalactic.Or[cloud.artik.cloudconnector.api_v1.WelcomeTask,cloud.artik.cloudconnector.api_v1.Failure]"></a>
+      <a id="generateWelcomeMessage(Context,DeviceInfo,Option[RequestDef],Option[Response]):Or[WelcomeTask,Failure]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">generateWelcomeMessage</span><span class="params">(<span name="ctx">ctx: <a href="Context.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Context">Context</a></span>, <span name="deviceInfo">deviceInfo: <a href="DeviceInfo.html" class="extype" name="cloud.artik.cloudconnector.api_v1.DeviceInfo">DeviceInfo</a></span>, <span name="optResponse">optResponse: <span class="extype" name="scala.Option">Option</span>[<a href="Response.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Response">Response</a>]</span>)</span><span class="result">: <span class="extype" name="org.scalactic.Or">Or</span>[<a href="WelcomeTask.html" class="extype" name="cloud.artik.cloudconnector.api_v1.WelcomeTask">WelcomeTask</a>, <a href="Failure.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Failure">Failure</a>]</span>
+        <span class="name">generateWelcomeMessage</span><span class="params">(<span name="ctx">ctx: <a href="Context.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Context">Context</a></span>, <span name="info">info: <a href="DeviceInfo.html" class="extype" name="cloud.artik.cloudconnector.api_v1.DeviceInfo">DeviceInfo</a></span>, <span name="req">req: <span class="extype" name="scala.Option">Option</span>[<a href="RequestDef.html" class="extype" name="cloud.artik.cloudconnector.api_v1.RequestDef">RequestDef</a>]</span>, <span name="res">res: <span class="extype" name="scala.Option">Option</span>[<a href="Response.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Response">Response</a>]</span>)</span><span class="result">: <span class="extype" name="org.scalactic.Or">Or</span>[<a href="WelcomeTask.html" class="extype" name="cloud.artik.cloudconnector.api_v1.WelcomeTask">WelcomeTask</a>, <a href="Failure.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Failure">Failure</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.CloudConnector@generateWelcomeMessage(ctx:cloud.artik.cloudconnector.api_v1.Context,deviceInfo:cloud.artik.cloudconnector.api_v1.DeviceInfo,optResponse:Option[cloud.artik.cloudconnector.api_v1.Response]):org.scalactic.Or[cloud.artik.cloudconnector.api_v1.WelcomeTask,cloud.artik.cloudconnector.api_v1.Failure]" title="Permalink" target="_top">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.CloudConnector@generateWelcomeMessage(ctx:cloud.artik.cloudconnector.api_v1.Context,info:cloud.artik.cloudconnector.api_v1.DeviceInfo,req:Option[cloud.artik.cloudconnector.api_v1.RequestDef],res:Option[cloud.artik.cloudconnector.api_v1.Response]):org.scalactic.Or[cloud.artik.cloudconnector.api_v1.WelcomeTask,cloud.artik.cloudconnector.api_v1.Failure]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Override this method if you want to display a message after the subscription phase.</p><div class="fullcomment"><div class="comment cmt"><p>Override this method if you want to display a message after the subscription phase.
 You can use this method to list devices and let the user knows some devices will be created.
-Default impl: No welcome message is displayed</p><pre>Good(NoWelcomePage)</pre></div></div>
+Default impl: No welcome message is displayed</p><pre>Good(NoWelcomePage)</pre></div><dl class="paramcmts block"><dt class="param">ctx</dt><dd class="cmt"><p>the Context of execution</p></dd><dt class="param">info</dt><dd class="cmt"><p>the DeviceInfo of the target device</p></dd><dt class="param">req</dt><dd class="cmt"><p>the RequestDef that produce the res (None if no res is None)</p></dd><dt class="param">res</dt><dd class="cmt"><p>the Response produced by the RequestDef returns by a previous call to generateWelcomePage</p></dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
