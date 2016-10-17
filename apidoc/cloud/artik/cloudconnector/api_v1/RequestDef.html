@@ -45,13 +45,13 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">RequestDef</span><span class="params">(<span name="url">url: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="method">method: <a href="HttpMethod.html" class="extype" name="cloud.artik.cloudconnector.api_v1.HttpMethod">HttpMethod</a> = <span class="symbol">HttpMethod.Get</span></span>, <span name="queryParams">queryParams: <span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="Empty$.html">Empty.map</a></span></span></span>, <span name="headers">headers: <span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="Empty$.html">Empty.map</a></span></span></span>, <span name="bodyParams">bodyParams: <span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="Empty$.html">Empty.map</a></span></span></span>, <span name="contentType">contentType: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;text/plain&quot;</span></span>, <span name="content">content: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="signature">signature: <span class="extype" name="scala.Option">Option</span>[<a href="SignatureDataForOAuth.html" class="extype" name="cloud.artik.cloudconnector.api_v1.SignatureDataForOAuth">SignatureDataForOAuth</a>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="Task.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Task">Task</a> with <a href="CustomAuthenticationTask.html" class="extype" name="cloud.artik.cloudconnector.api_v1.CustomAuthenticationTask">CustomAuthenticationTask</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">RequestDef</span><span class="params">(<span name="url">url: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="method">method: <a href="HttpMethod.html" class="extype" name="cloud.artik.cloudconnector.api_v1.HttpMethod">HttpMethod</a> = <span class="symbol">HttpMethod.Get</span></span>, <span name="queryParams">queryParams: <span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="Empty$.html">Empty.map</a></span></span></span>, <span name="headers">headers: <span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="Empty$.html">Empty.map</a></span></span></span>, <span name="bodyParams">bodyParams: <span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="Empty$.html">Empty.map</a></span></span></span>, <span name="contentType">contentType: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;text/plain&quot;</span></span>, <span name="content">content: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="signature">signature: <span class="extype" name="scala.Option">Option</span>[<a href="SignatureDataForOAuth.html" class="extype" name="cloud.artik.cloudconnector.api_v1.SignatureDataForOAuth">SignatureDataForOAuth</a>] = <span class="symbol">None</span></span>, <span name="delay">delay: <span class="extype" name="scala.Long">Long</span> = <span class="symbol">0</span></span>)</span><span class="result"> extends <a href="Task.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Task">Task</a> with <a href="CustomAuthenticationTask.html" class="extype" name="cloud.artik.cloudconnector.api_v1.CustomAuthenticationTask">CustomAuthenticationTask</a> with <a href="WelcomeTask.html" class="extype" name="cloud.artik.cloudconnector.api_v1.WelcomeTask">WelcomeTask</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <a href="CustomAuthenticationTask.html" class="extype" name="cloud.artik.cloudconnector.api_v1.CustomAuthenticationTask">CustomAuthenticationTask</a>, <a href="Task.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Task">Task</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <a href="WelcomeTask.html" class="extype" name="cloud.artik.cloudconnector.api_v1.WelcomeTask">WelcomeTask</a>, <a href="CustomAuthenticationTask.html" class="extype" name="cloud.artik.cloudconnector.api_v1.CustomAuthenticationTask">CustomAuthenticationTask</a>, <a href="Task.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Task">Task</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -69,7 +69,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="cloud.artik.cloudconnector.api_v1.RequestDef"><span>RequestDef</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="cloud.artik.cloudconnector.api_v1.CustomAuthenticationTask"><span>CustomAuthenticationTask</span></li><li class="in" name="cloud.artik.cloudconnector.api_v1.Task"><span>Task</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="cloud.artik.cloudconnector.api_v1.RequestDef"><span>RequestDef</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="cloud.artik.cloudconnector.api_v1.WelcomeTask"><span>WelcomeTask</span></li><li class="in" name="cloud.artik.cloudconnector.api_v1.CustomAuthenticationTask"><span>CustomAuthenticationTask</span></li><li class="in" name="cloud.artik.cloudconnector.api_v1.Task"><span>Task</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -114,10 +114,27 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">RequestDef</span><span class="params">(<span name="url">url: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="method">method: <a href="HttpMethod.html" class="extype" name="cloud.artik.cloudconnector.api_v1.HttpMethod">HttpMethod</a> = <span class="symbol">HttpMethod.Get</span></span>, <span name="queryParams">queryParams: <span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="Empty$.html">Empty.map</a></span></span></span>, <span name="headers">headers: <span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="Empty$.html">Empty.map</a></span></span></span>, <span name="bodyParams">bodyParams: <span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="Empty$.html">Empty.map</a></span></span></span>, <span name="contentType">contentType: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;text/plain&quot;</span></span>, <span name="content">content: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="signature">signature: <span class="extype" name="scala.Option">Option</span>[<a href="SignatureDataForOAuth.html" class="extype" name="cloud.artik.cloudconnector.api_v1.SignatureDataForOAuth">SignatureDataForOAuth</a>] = <span class="symbol">None</span></span>)</span>
+        <span class="name">RequestDef</span><span class="params">(<span name="url">url: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="method">method: <a href="HttpMethod.html" class="extype" name="cloud.artik.cloudconnector.api_v1.HttpMethod">HttpMethod</a></span>, <span name="queryParams">queryParams: <span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="headers">headers: <span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="bodyParams">bodyParams: <span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="contentType">contentType: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="content">content: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="signature">signature: <span class="extype" name="scala.Option">Option</span>[<a href="SignatureDataForOAuth.html" class="extype" name="cloud.artik.cloudconnector.api_v1.SignatureDataForOAuth">SignatureDataForOAuth</a>]</span>)</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.RequestDef@&lt;init&gt;(url:String,method:cloud.artik.cloudconnector.api_v1.HttpMethod,queryParams:java.util.Map[String,String],headers:java.util.Map[String,String],bodyParams:java.util.Map[String,String],contentType:String,content:String,signature:Option[cloud.artik.cloudconnector.api_v1.SignatureDataForOAuth]):cloud.artik.cloudconnector.api_v1.RequestDef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cloud.artik.cloudconnector.api_v1.RequestDef#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(url:String,method:cloud.artik.cloudconnector.api_v1.HttpMethod,queryParams:java.util.Map[String,String],headers:java.util.Map[String,String],bodyParams:java.util.Map[String,String],contentType:String,content:String,signature:Option[cloud.artik.cloudconnector.api_v1.SignatureDataForOAuth],delay:Long):cloud.artik.cloudconnector.api_v1.RequestDef"></a>
+      <a id="&lt;init&gt;:RequestDef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">RequestDef</span><span class="params">(<span name="url">url: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="method">method: <a href="HttpMethod.html" class="extype" name="cloud.artik.cloudconnector.api_v1.HttpMethod">HttpMethod</a> = <span class="symbol">HttpMethod.Get</span></span>, <span name="queryParams">queryParams: <span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="Empty$.html">Empty.map</a></span></span></span>, <span name="headers">headers: <span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="Empty$.html">Empty.map</a></span></span></span>, <span name="bodyParams">bodyParams: <span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="Empty$.html">Empty.map</a></span></span></span>, <span name="contentType">contentType: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;text/plain&quot;</span></span>, <span name="content">content: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="signature">signature: <span class="extype" name="scala.Option">Option</span>[<a href="SignatureDataForOAuth.html" class="extype" name="cloud.artik.cloudconnector.api_v1.SignatureDataForOAuth">SignatureDataForOAuth</a>] = <span class="symbol">None</span></span>, <span name="delay">delay: <span class="extype" name="scala.Long">Long</span> = <span class="symbol">0</span></span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.RequestDef@&lt;init&gt;(url:String,method:cloud.artik.cloudconnector.api_v1.HttpMethod,queryParams:java.util.Map[String,String],headers:java.util.Map[String,String],bodyParams:java.util.Map[String,String],contentType:String,content:String,signature:Option[cloud.artik.cloudconnector.api_v1.SignatureDataForOAuth],delay:Long):cloud.artik.cloudconnector.api_v1.RequestDef" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -303,6 +320,23 @@
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.RequestDef@contentType:String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cloud.artik.cloudconnector.api_v1.RequestDef#delay" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="delay:Long"></a>
+      <a id="delay:Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">delay</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.RequestDef@delay:Long" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -659,6 +693,23 @@ If used, 'withContent' method is ignored.
       </a>
     </span>
       
+    </li><li name="cloud.artik.cloudconnector.api_v1.RequestDef#withDelay" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withDelay(d:Long):cloud.artik.cloudconnector.api_v1.RequestDef"></a>
+      <a id="withDelay(Long):RequestDef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withDelay</span><span class="params">(<span name="d">d: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <a href="" class="extype" name="cloud.artik.cloudconnector.api_v1.RequestDef">RequestDef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.RequestDef@withDelay(d:Long):cloud.artik.cloudconnector.api_v1.RequestDef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
     </li><li name="cloud.artik.cloudconnector.api_v1.RequestDef#withHeaders" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="withHeaders(v:java.util.Map[String,String]):cloud.artik.cloudconnector.api_v1.RequestDef"></a>
       <a id="withHeaders(Map[String,String]):RequestDef"></a>
@@ -744,6 +795,8 @@ If used, 'withContent' method is ignored.
               <h3>Inherited from <span class="extype" name="scala.Product">Product</span></h3>
             </div><div class="parent" name="scala.Equals">
               <h3>Inherited from <span class="extype" name="scala.Equals">Equals</span></h3>
+            </div><div class="parent" name="cloud.artik.cloudconnector.api_v1.WelcomeTask">
+              <h3>Inherited from <a href="WelcomeTask.html" class="extype" name="cloud.artik.cloudconnector.api_v1.WelcomeTask">WelcomeTask</a></h3>
             </div><div class="parent" name="cloud.artik.cloudconnector.api_v1.CustomAuthenticationTask">
               <h3>Inherited from <a href="CustomAuthenticationTask.html" class="extype" name="cloud.artik.cloudconnector.api_v1.CustomAuthenticationTask">CustomAuthenticationTask</a></h3>
             </div><div class="parent" name="cloud.artik.cloudconnector.api_v1.Task">
