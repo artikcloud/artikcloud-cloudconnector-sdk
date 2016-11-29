@@ -45,7 +45,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">Event</span><span class="params">(<span name="ts">ts: <span class="extype" name="scala.Long">Long</span></span>, <span name="payload">payload: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="kind">kind: <a href="EventType.html" class="extype" name="cloud.artik.cloudconnector.api_v1.EventType">EventType</a> = <span class="symbol">EventType.data</span></span>, <span name="extSdid">extSdid: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="extSdtid">extSdtid: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="Task.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Task">Task</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">Event</span><span class="params">(<span name="ts">ts: <span class="extype" name="scala.Long">Long</span></span>, <span name="payload">payload: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="kind">kind: <a href="EventType.html" class="extype" name="cloud.artik.cloudconnector.api_v1.EventType">EventType</a> = <span class="symbol">EventType.data</span></span>, <span name="extSubDeviceId">extSubDeviceId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="extSubDeviceTypeId">extSubDeviceTypeId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="Task.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Task">Task</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
@@ -89,7 +89,7 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="cloud.artik.cloudconnector.api_v1.Event#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(payload:String,kind:cloud.artik.cloudconnector.api_v1.EventType,extSdid:String,extSdtid:String):cloud.artik.cloudconnector.api_v1.Event"></a>
+      <a id="&lt;init&gt;(payload:String,kind:cloud.artik.cloudconnector.api_v1.EventType,extSubDeviceId:String,extSubDeviceTypeId:String):cloud.artik.cloudconnector.api_v1.Event"></a>
       <a id="&lt;init&gt;:Event"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -97,16 +97,16 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">Event</span><span class="params">(<span name="payload">payload: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="kind">kind: <a href="EventType.html" class="extype" name="cloud.artik.cloudconnector.api_v1.EventType">EventType</a></span>, <span name="extSdid">extSdid: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="extSdtid">extSdtid: <span class="extype" name="scala.Predef.String">String</span></span>)</span>
+        <span class="name">Event</span><span class="params">(<span name="payload">payload: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="kind">kind: <a href="EventType.html" class="extype" name="cloud.artik.cloudconnector.api_v1.EventType">EventType</a></span>, <span name="extSubDeviceId">extSubDeviceId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="extSubDeviceTypeId">extSubDeviceTypeId: <span class="extype" name="scala.Predef.String">String</span></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Event@&lt;init&gt;(payload:String,kind:cloud.artik.cloudconnector.api_v1.EventType,extSdid:String,extSdtid:String):cloud.artik.cloudconnector.api_v1.Event" title="Permalink" target="_top">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Event@&lt;init&gt;(payload:String,kind:cloud.artik.cloudconnector.api_v1.EventType,extSubDeviceId:String,extSubDeviceTypeId:String):cloud.artik.cloudconnector.api_v1.Event" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       
     </li><li name="cloud.artik.cloudconnector.api_v1.Event#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(kind:cloud.artik.cloudconnector.api_v1.EventType,extSdid:String):cloud.artik.cloudconnector.api_v1.Event"></a>
+      <a id="&lt;init&gt;(kind:cloud.artik.cloudconnector.api_v1.EventType,extSubDeviceId:String):cloud.artik.cloudconnector.api_v1.Event"></a>
       <a id="&lt;init&gt;:Event"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -114,16 +114,16 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">Event</span><span class="params">(<span name="kind">kind: <a href="EventType.html" class="extype" name="cloud.artik.cloudconnector.api_v1.EventType">EventType</a></span>, <span name="extSdid">extSdid: <span class="extype" name="scala.Predef.String">String</span></span>)</span>
+        <span class="name">Event</span><span class="params">(<span name="kind">kind: <a href="EventType.html" class="extype" name="cloud.artik.cloudconnector.api_v1.EventType">EventType</a></span>, <span name="extSubDeviceId">extSubDeviceId: <span class="extype" name="scala.Predef.String">String</span></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Event@&lt;init&gt;(kind:cloud.artik.cloudconnector.api_v1.EventType,extSdid:String):cloud.artik.cloudconnector.api_v1.Event" title="Permalink" target="_top">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Event@&lt;init&gt;(kind:cloud.artik.cloudconnector.api_v1.EventType,extSubDeviceId:String):cloud.artik.cloudconnector.api_v1.Event" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       
     </li><li name="cloud.artik.cloudconnector.api_v1.Event#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(payload:String,kind:cloud.artik.cloudconnector.api_v1.EventType,extSdid:String):cloud.artik.cloudconnector.api_v1.Event"></a>
+      <a id="&lt;init&gt;(payload:String,kind:cloud.artik.cloudconnector.api_v1.EventType,extSubDeviceId:String):cloud.artik.cloudconnector.api_v1.Event"></a>
       <a id="&lt;init&gt;:Event"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -131,10 +131,10 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">Event</span><span class="params">(<span name="payload">payload: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="kind">kind: <a href="EventType.html" class="extype" name="cloud.artik.cloudconnector.api_v1.EventType">EventType</a></span>, <span name="extSdid">extSdid: <span class="extype" name="scala.Predef.String">String</span></span>)</span>
+        <span class="name">Event</span><span class="params">(<span name="payload">payload: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="kind">kind: <a href="EventType.html" class="extype" name="cloud.artik.cloudconnector.api_v1.EventType">EventType</a></span>, <span name="extSubDeviceId">extSubDeviceId: <span class="extype" name="scala.Predef.String">String</span></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Event@&lt;init&gt;(payload:String,kind:cloud.artik.cloudconnector.api_v1.EventType,extSdid:String):cloud.artik.cloudconnector.api_v1.Event" title="Permalink" target="_top">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Event@&lt;init&gt;(payload:String,kind:cloud.artik.cloudconnector.api_v1.EventType,extSubDeviceId:String):cloud.artik.cloudconnector.api_v1.Event" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -174,7 +174,7 @@
     </span>
       
     </li><li name="cloud.artik.cloudconnector.api_v1.Event#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(ts:Long,payload:String,kind:cloud.artik.cloudconnector.api_v1.EventType,extSdid:Option[String]):cloud.artik.cloudconnector.api_v1.Event"></a>
+      <a id="&lt;init&gt;(ts:Long,payload:String,kind:cloud.artik.cloudconnector.api_v1.EventType,extSubDeviceId:Option[String]):cloud.artik.cloudconnector.api_v1.Event"></a>
       <a id="&lt;init&gt;:Event"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -182,16 +182,16 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">Event</span><span class="params">(<span name="ts">ts: <span class="extype" name="scala.Long">Long</span></span>, <span name="payload">payload: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="kind">kind: <a href="EventType.html" class="extype" name="cloud.artik.cloudconnector.api_v1.EventType">EventType</a></span>, <span name="extSdid">extSdid: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span>
+        <span class="name">Event</span><span class="params">(<span name="ts">ts: <span class="extype" name="scala.Long">Long</span></span>, <span name="payload">payload: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="kind">kind: <a href="EventType.html" class="extype" name="cloud.artik.cloudconnector.api_v1.EventType">EventType</a></span>, <span name="extSubDeviceId">extSubDeviceId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Event@&lt;init&gt;(ts:Long,payload:String,kind:cloud.artik.cloudconnector.api_v1.EventType,extSdid:Option[String]):cloud.artik.cloudconnector.api_v1.Event" title="Permalink" target="_top">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Event@&lt;init&gt;(ts:Long,payload:String,kind:cloud.artik.cloudconnector.api_v1.EventType,extSubDeviceId:Option[String]):cloud.artik.cloudconnector.api_v1.Event" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       
     </li><li name="cloud.artik.cloudconnector.api_v1.Event#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(ts:Long,payload:String,kind:cloud.artik.cloudconnector.api_v1.EventType,extSdid:Option[String],extSdtid:Option[String]):cloud.artik.cloudconnector.api_v1.Event"></a>
+      <a id="&lt;init&gt;(ts:Long,payload:String,kind:cloud.artik.cloudconnector.api_v1.EventType,extSubDeviceId:Option[String],extSubDeviceTypeId:Option[String]):cloud.artik.cloudconnector.api_v1.Event"></a>
       <a id="&lt;init&gt;:Event"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -199,10 +199,10 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">Event</span><span class="params">(<span name="ts">ts: <span class="extype" name="scala.Long">Long</span></span>, <span name="payload">payload: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="kind">kind: <a href="EventType.html" class="extype" name="cloud.artik.cloudconnector.api_v1.EventType">EventType</a> = <span class="symbol">EventType.data</span></span>, <span name="extSdid">extSdid: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="extSdtid">extSdtid: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>)</span>
+        <span class="name">Event</span><span class="params">(<span name="ts">ts: <span class="extype" name="scala.Long">Long</span></span>, <span name="payload">payload: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="kind">kind: <a href="EventType.html" class="extype" name="cloud.artik.cloudconnector.api_v1.EventType">EventType</a> = <span class="symbol">EventType.data</span></span>, <span name="extSubDeviceId">extSubDeviceId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="extSubDeviceTypeId">extSubDeviceTypeId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Event@&lt;init&gt;(ts:Long,payload:String,kind:cloud.artik.cloudconnector.api_v1.EventType,extSdid:Option[String],extSdtid:Option[String]):cloud.artik.cloudconnector.api_v1.Event" title="Permalink" target="_top">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Event@&lt;init&gt;(ts:Long,payload:String,kind:cloud.artik.cloudconnector.api_v1.EventType,extSubDeviceId:Option[String],extSubDeviceTypeId:Option[String]):cloud.artik.cloudconnector.api_v1.Event" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -324,36 +324,36 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="cloud.artik.cloudconnector.api_v1.Event#extSdid" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="extSdid:Option[String]"></a>
-      <a id="extSdid:Option[String]"></a>
+    </li><li name="cloud.artik.cloudconnector.api_v1.Event#extSubDeviceId" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="extSubDeviceId:Option[String]"></a>
+      <a id="extSubDeviceId:Option[String]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">extSdid</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+        <span class="name">extSubDeviceId</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Event@extSdid:Option[String]" title="Permalink" target="_top">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Event@extSubDeviceId:Option[String]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       
-    </li><li name="cloud.artik.cloudconnector.api_v1.Event#extSdtid" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="extSdtid:Option[String]"></a>
-      <a id="extSdtid:Option[String]"></a>
+    </li><li name="cloud.artik.cloudconnector.api_v1.Event#extSubDeviceTypeId" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="extSubDeviceTypeId:Option[String]"></a>
+      <a id="extSubDeviceTypeId:Option[String]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">extSdtid</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+        <span class="name">extSubDeviceTypeId</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Event@extSdtid:Option[String]" title="Permalink" target="_top">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Event@extSubDeviceTypeId:Option[String]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -608,7 +608,50 @@
 
         
 
-        
+        <div id="values" class="values members">
+              <h3>Deprecated Value Members</h3>
+              <ol><li name="cloud.artik.cloudconnector.api_v1.Event#extSdid" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="extSdid:Option[String]"></a>
+      <a id="extSdid:Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: replaced by extSubDeviceId">extSdid</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Event@extSdid:Option[String]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p>replaced by extSubDeviceId</p></dd></dl></div>
+    </li><li name="cloud.artik.cloudconnector.api_v1.Event#extSdtid" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="extSdtid:Option[String]"></a>
+      <a id="extSdtid:Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: replaced by extSubDeviceTypeId">extSdtid</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Event@extSdtid:Option[String]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p>replaced by extSubDeviceTypeId</p></dd></dl></div>
+    </li></ol>
+            </div>
         </div>
 
         <div id="inheritedMembers">
