@@ -1,4 +1,4 @@
-package com.sample
+package cloudconnector
 
 import static java.net.HttpURLConnection.*
 

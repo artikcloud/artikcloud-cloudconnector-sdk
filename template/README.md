@@ -110,13 +110,13 @@ There are more unit test examples in the sample projects, e.g., how to compare J
 
 ### Integration Testing
 
-If you change the package name of `MyCloudConnector.groovy` from `com.sample` to something else (for example, `com.moves`), you will have to modify `build.gradle` file to use the correct package name before running `../gradlew runTestServer`. 
+If you change the package name of `MyCloudConnector.groovy` from `cloudconnector` to something else (for example, `com.moves`), you will have to modify `build.gradle` file to use the correct package name before running `../gradlew runTestServer`. 
 
-Open `build.gradle` in an editor, and replace `com.sample` in the following code snippet with the correct package name (for example, `com.moves`). 
+Open `build.gradle` in an editor, and replace `cloudconnector` in the following code snippet with the correct package name (for example, `com.moves`). 
 ```
 task runTestServer(type:JavaExec) {
   main = System.getProperty("exec.mainClass") ?: "utils.MyCloudConnectorRun"
-  args = ["com.sample"]
+  args = ["cloudconnector"]
   classpath = sourceSets.test.runtimeClasspath
 }
 ```

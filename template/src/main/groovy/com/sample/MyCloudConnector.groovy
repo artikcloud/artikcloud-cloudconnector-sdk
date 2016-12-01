@@ -2,7 +2,7 @@
 // Every code is commented, because everything is optional.
 // The class can be named as you want no additional import allowed
 // See the javadoc/scaladoc of cloud.artik.cloudconnector.api_v1.CloudConnector
-package com.sample
+package cloudconnector
 
 import static java.net.HttpURLConnection.*
 
