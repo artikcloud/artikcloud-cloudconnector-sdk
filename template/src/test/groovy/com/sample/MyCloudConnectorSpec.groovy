@@ -43,7 +43,7 @@ class MyCloudConnectorSpec extends Specification {
       then:
       res.isGood()
       res.get() == new NotificationResponse([
-        new ThirdPartyNotification(new ByDeviceId(did), [
+        new ThirdPartyNotification(new ByDid(did), [
           new RequestDef("${ctx.parameters()['endpoint']}/messages/m1"),
           new RequestDef("${ctx.parameters()['endpoint']}/messages/m2")
         ])

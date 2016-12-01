@@ -43,7 +43,7 @@ class Tools {
     static def tryConvertTaskToEaseCmp (Event e) {
         if (e.kind == EventType.data) {
             try {
-                return new Event(e.ts, JsonOutput.toJson(parser.parseText(e.payload)), e.kind, e.extSdid, e.extSdtid)
+                return new Event(e.ts, JsonOutput.toJson(parser.parseText(e.payload)), e.kind, e.extSubDeviceId, e.extSubDeviceTypeId)
             } catch(Exception exc) {
                 // ignore => default return
             }

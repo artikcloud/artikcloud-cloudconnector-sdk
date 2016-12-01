@@ -104,7 +104,7 @@ class MyCloudConnector extends CloudConnector {
         ctx.debug("onNotification: " + req)
         if (req.url.endsWith("thirdpartynotifications/postsubscription")) {
             def did = slurper.parseText(req.content())?.did
-            //return new Good(new NotificationResponse([new ThirdPartyNotification(new ByDeviceId(did), [])]))
+            //return new Good(new NotificationResponse([new ThirdPartyNotification(new ByDid(did), [])]))
             return new Good(new NotificationResponse([]))
         } else if (req.contentType() == CT_JSON && req.content().trim().length() > 0) {
             def did = req.headers()['notificationId']
@@ -118,7 +118,7 @@ class MyCloudConnector extends CloudConnector {
             def dataToFetch = json.messages.collect { e ->
                 new RequestDef("${ctx.parameters().endpoint}/messages/${e}")
             }
-            return new Good(new NotificationResponse([new ThirdPartyNotification(new ByDeviceId(did), dataToFetch)]))
+            return new Good(new NotificationResponse([new ThirdPartyNotification(new ByDid(did), dataToFetch)]))
         } else {
             // nothing todo
             return new Good(new NotificationResponse([]))
@@ -163,6 +163,7 @@ class MyCloudConnector extends CloudConnector {
 
     @Override
     Or<ActionResponse, Failure> onAction(Context ctx, ActionDef action, DeviceInfo info) {
+        ctx.debug(action.extSubDeviceId)
         switch (action.name) {
             case "setValue":
                 def did = info.did
@@ -186,7 +187,7 @@ class MyCloudConnector extends CloudConnector {
         }
     }
 
-    // Or<List<Event>, Failure> onActionData(Context ctx, DeviceInfo info, String data) {
-    //  new Bad(new Failure("unsupported: method onActionData should be implemented"))
-    // }
+    Or<List<Event>, Failure> onActionData(Context ctx, DeviceInfo info, String data) {
+      new Bad(new Failure("unsupported: method onActionData should be implemented"))
+    }
 }
