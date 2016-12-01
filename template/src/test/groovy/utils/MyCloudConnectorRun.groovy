@@ -20,8 +20,8 @@ class MyCloudConnectorRun {
     def base = ((args.length > 0)? args[0] : MyCloudConnectorRun.getPackage().getName()).replace('.', '/')
     println('base : ' + base)
     def server = SimpleHttpServer.start(
-      MyCloudConnectorRun.getResource("/${base}/cfg.json").getText('UTF-8'),
-      MyCloudConnectorRun.getResource("/${base}/MyCloudConnector.groovy").getText('UTF-8'),
+      MyCloudConnectorRun.getResource("/${base}/cfg.json").toURI(),
+      MyCloudConnectorRun.getResource("/${base}/MyCloudConnector.groovy").toURI(),
       srvCfg
     )
     //server.stop()
