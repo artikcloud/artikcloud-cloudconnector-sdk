@@ -1,6 +1,6 @@
 This is a template project. Based on it, you can write custom Cloud Connector code, configure parameters, and perform both unit and integration testing. 
 
-Refer to the sibling directories sample-xxx for examples of the Cloud Connector. These Cloud Connectors have been tested and work in production. For example, you can connect a device of type "moves" in the ARTIK Cloud [User Portal](https://www.artik.cloud).
+Refer to the sibling repository sample-xxx for examples of the Cloud Connector. These Cloud Connectors have been tested and work in production. For example, you can connect a device of type "moves" in the ARTIK Cloud [User Portal](https://www.artik.cloud).
 
 # Install
 
@@ -17,11 +17,10 @@ When running '../gradlew XXXX' commands in Section "Usages", `gradlew` will down
 
 You can compile the template project without changing any code. However, the Cloud Connector built from the template does not perform any real operations.
 
- * Edit [src/main/groovy/com/sample/MyCloudConnector.groovy](src/main/groovy/com/sample/MyCloudConnector.groovy)
+ * Edit [src/main/groovy/cloudconnector/MyCloudConnector.groovy](src/main/groovy/cloudconnector/MyCloudConnector.groovy)
     * Overwrite necessary methods to process subscription, notifications, and data fetching from the third-party cloud
     * Use the following libraries in Groovy code :
      * [artikcloud-cloudconnector-api](http://artikcloud.github.io/artikcloud-cloudconnector-sdk/apidoc/)
-     * [joda-time 2.3](http://www.joda.org/joda-time/apidocs/index.html) for date and time manipulation
      * [commons-codec 1.10](https://commons.apache.org/proper/commons-codec/archives/1.10/apidocs/index.html)
      * [scalactic 2.2.4](http://www.scalactic.org/), which provides a few helper constructs including classes [Or, Good, Bad](http://www.scalactic.org/user_guide/OrAndEvery)
  * Compile to check compilation errors
@@ -31,7 +30,7 @@ You can compile the template project without changing any code. However, the Clo
 
 ### Unit test
 
- * Edit [src/test/groovy/com/sample/MyCloudConnectorSpec.groovy](src/test/groovy/com/sample/MyCloudConnectorSpec.groovy)
+ * Edit [src/test/groovy/cloudconnector/MyCloudConnectorSpec.groovy](src/test/groovy/cloudconnector/MyCloudConnectorSpec.groovy)
  * Run unit test. Make sure to provide 'cleanTest' in the command to force run. Otherwise `gradlew` skips running test if the code was not changed since the command was last run:
   ```
   ../gradlew cleanTest test
@@ -40,8 +39,8 @@ You can compile the template project without changing any code. However, the Clo
 ### Integration testing in the local environment:
 You can perform manual integration testing on an HTTP (HTTPS) local server. The local server provides the minimal runtime environment to run the Cloud Connector. On this server, you can test authentication and fetching data from the third-party cloud before uploading your Cloud Connector code to the ARTIK Cloud [Developer Portal](https://developer.artik.cloud/).
 
- * Edit [src/main/groovy/com/sample/cfg.json](src/main/groovy/com/sample/cfg.json) to set up the authentication from your local test server to the third-party cloud. The information in cfg.json is pretty much the same as the information provided in [Cloud Authentication UI](https://developer.artik.cloud/documentation/connect-the-data/using-cloud-connectors.html#set-authentication-parameters) at the ARTIK Cloud Developer Portal. Here you will have to use cfg.json instead of the UI to do that. You can refer to the following resources to learn how to write cfg.json:
-    * [cfg.json.sample](src/main/groovy/com/sample/cfg.json.sample) explains each JSON key.
+ * Edit [src/main/groovy/cloudconnector/cfg.json](src/main/groovy/cloudconnector/cfg.json) to set up the authentication from your local test server to the third-party cloud. The information in cfg.json is pretty much the same as the information provided in [Cloud Authentication UI](https://developer.artik.cloud/documentation/connect-the-data/using-cloud-connectors.html#set-authentication-parameters) at the ARTIK Cloud Developer Portal. Here you will have to use cfg.json instead of the UI to do that. You can refer to the following resources to learn how to write cfg.json:
+    * [cfg.json.sample](src/main/groovy/cloudconnector/cfg.json.sample) explains each JSON key.
     * sample-xxx/src/main/groovy/\<package\>/cfg.json is for each example cloud.
  * Test the Cloud Connector on a local HTTP server.
     * To receive notifications, your local server should be accessible via Internet (for example, use a server accessible from the outside or use ssh tunnel with port forwarding).
@@ -56,7 +55,7 @@ You can perform manual integration testing on an HTTP (HTTPS) local server. The 
      redirect uri: http://localhost:9080/cloudconnectors/0000/auth
      notification uri: http://localhost:9080/cloudconnectors/0000/thirdpartynotifications
      ```
-    * Start subscribing to a device by loading http://localhost:9080/cloudconnectors/0000/start_subscription in your browser.
+    * Open http://localhost:9080/ in your browser, click on "Authorize".
     * Follow the instructions displayed on the web page.
     * Generate new data in the third-party application, which triggers the notification from the third-party cloud to your local test server.
     * In the console, the test server should print a line with "0000: queuing event Event(" for each event generated by MyCloudConnector. One event is for one ARTIK Cloud message.
@@ -80,7 +79,7 @@ MyCloudConnector is a derived class that extends [CloudConnector](http://artikcl
 
 ### Tips
 
-* Using custom parameters in your Cloud Connector Groovy code improves the flexibility of your code. Please refer to [About custom parameters](https://developer.artik.cloud/documentation/connect-the-data/using-cloud-connectors.html#about-custom-parameters) to learn about custom parameters and how to use them. Per the doc, you add custom parameters to the CUSTOM PARAMETERS table in the Connector Code tab in the Developer Portal. When performing unit and integration testing locally, your Groovy code cannot access custom parameters since the table is not accessbile locally. In order to pass the testing, you edit src/main/groovy/com/sample/cfg.json. Specifically, add all custom parameters in CUSTOM PARAMETERS table to `parameters` JSON object in cfg.json as follows:
+* Using custom parameters in your Cloud Connector Groovy code improves the flexibility of your code. Please refer to [About custom parameters](https://developer.artik.cloud/documentation/connect-the-data/using-cloud-connectors.html#about-custom-parameters) to learn about custom parameters and how to use them. Per the doc, you add custom parameters to the CUSTOM PARAMETERS table in the Connector Code tab in the Developer Portal. When performing unit and integration testing locally, your Groovy code cannot access custom parameters since the table is not accessible locally. In order to pass the testing, you edit src/main/groovy/cloudconnector/cfg.json. Specifically, add all custom parameters in CUSTOM PARAMETERS table to `parameters` JSON object in cfg.json as follows:
 
 ```
 {
@@ -125,9 +124,29 @@ It is possible to customize ports, hostname, certificate by editing the file [sr
 
 You can configure logging in [src/test/resources/logback-test.xml](src/test/resources/logback-test.xml).
 
+#### Using ngrok
+
+[Ngrok](https://ngrok.com) is a service to ease the dev of web service by providing a "Secure tunnels to localhost", with support of http & https.
+1. download and install the ngrok client on your desktop (the free version is enough to work)
+2. launch the ngrok client (You can let the ngrok client running all the day)
+```
+ngrok http 9080
+```
+3. it should display the your public http and https url, like 
+```
+...
+Forwarding                    http://92832de0.ngrok.io -> localhost:9080
+Forwarding                    https://92832de0.ngrok.io -> localhost:9080
+```
+4. on an other shell, start your test server with the public name ngrok give you:
+```
+../gradlew -DbaseUri=https://92832de0.ngrok.io runTestServer
+```
+5. Update the configuration of "authentication" and "webhook" of your application on the third party cloud.
+
 #### Enable HTTS/SSL
 
-If the third-party cloud requires HTTPS for authentication and notification, then you have to customize `utils/MyCloudConnectorRun.groovy`.
+If you don't use ngrok and if the third-party cloud requires HTTPS for authentication and notification, then you have to customize `utils/MyCloudConnectorRun.groovy`.
 
 1. Select a domain/host name that you can use (e.g., my.domain.com). **Don't forget to register it into your /etc/hosts or your DNS' registrar**
 1. Enable HTTPS port by setting a no-null value for httpsPort parameter (eg. 9083). If you try to connect to https://my.domain.com:9083/ a self-signed certificate will be generated and used.

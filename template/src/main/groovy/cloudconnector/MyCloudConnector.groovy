@@ -1,5 +1,5 @@
 // Sample CloudConnector, that can be used as a boostrap to write a new CloudConnector.
-// Every code is commented, because everything is optional.
+// Lot of code is commented, and everything is optional.
 // The class can be named as you want no additional import allowed
 // See the javadoc/scaladoc of cloud.artik.cloudconnector.api_v1.CloudConnector
 package cloudconnector
@@ -26,10 +26,18 @@ class MyCloudConnector extends CloudConnector {
     @Override
     Or<RequestDef, Failure> signAndPrepare(Context ctx, RequestDef req, DeviceInfo info, Phase phase) {
         ctx.debug('phase: ' + phase)
-        //if (phase == Phase.refreshToken) {
-        //   //TODO change some params
-        //}
-        new Good(req.addHeaders(['Authorization':'Bearer ' + info.credentials.token]))
+        switch (phase) {
+          case Phase.subscribe:
+          case Phase.unsubscribe:
+          case Phase.fetch:
+            return new Good(req.addHeaders(["Authorization": "Bearer " + info.credentials.token]))
+          // case Phase.getOauth2Code:
+          // case Phase.getOauth2Token:
+          // case Phase.refreshToken:
+          // case Phase.undef:
+          default:
+            return super.signAndPrepare(ctx, req, info, phase)
+        }
     }
 
     //@Override
@@ -97,7 +105,7 @@ class MyCloudConnector extends CloudConnector {
     // }
 
     // -----------------------------------------
-    // CALLBACK
+    // CALLBACK & ACTION
     // -----------------------------------------
     @Override
     Or<NotificationResponse, Failure> onNotification(Context ctx, RequestDef req) {
@@ -125,11 +133,6 @@ class MyCloudConnector extends CloudConnector {
         }
     }
 
-    // @Override
-    // Or<RequestDef, Failure> fetch(Context ctx, RequestDef req, DeviceInfo info) {
-    //    new Good(req.addQueryParams(['userId' : info.extId().getOrElse(null)]))
-    // }
-
     @Override
     Or<List<Event>, Failure> onFetchResponse(Context ctx, RequestDef req, DeviceInfo info, Response res) {
         switch (res.status) {
@@ -153,7 +156,7 @@ class MyCloudConnector extends CloudConnector {
                 }
                 return new Bad(new Failure("unsupported response ${res} ... ${res.contentType} .. ${res.contentType.startsWith(CT_JSON)}"))
             default:
-                return new Bad(new Failure("http status : ${res.status} is not OK (${HTTP_OK}) on ${req.method} ${req.url}"))
+                return new Bad(new Failure("http status : ${res.status} on ${req.method} ${req.url}, with content : ${res.content}"))
         }
     }
 
@@ -187,7 +190,7 @@ class MyCloudConnector extends CloudConnector {
         }
     }
 
-    Or<List<Event>, Failure> onActionData(Context ctx, DeviceInfo info, String data) {
-      new Bad(new Failure("unsupported: method onActionData should be implemented"))
-    }
+    // Or<List<Event>, Failure> onActionData(Context ctx, DeviceInfo info, String data) {
+    //   new Bad(new Failure("unsupported: method onActionData should be implemented"))
+    // }
 }

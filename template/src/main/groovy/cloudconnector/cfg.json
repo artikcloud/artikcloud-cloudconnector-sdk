@@ -1,8 +1,8 @@
 {
   "authorizationUrl":"http://127.0.0.1:9001/0/oauth2/authorize",
   "accessTokenUrl":"http://127.0.0.1:9001/0/oauth2/token",
-  "clientId":"MyClientId",
-  "clientSecret":"MyClientSecret",
+  "clientId":"<insert client id>",
+  "clientSecret":"<insert client secret>",
   "authType" : "OAuth2",
   "scope":[ "default", "activity", "location" ],
   "statusAcceptNotification":200,
