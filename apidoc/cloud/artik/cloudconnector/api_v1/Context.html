@@ -161,6 +161,76 @@
       </a>
     </span>
       <p class="shortcomment cmt">log obj.</p><div class="fullcomment"><div class="comment cmt"><p>log obj. in debug level (or print)</p></div></div>
+    </li><li name="cloud.artik.cloudconnector.api_v1.Context#findExtSubDeviceId" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="findExtSubDeviceId(info:cloud.artik.cloudconnector.api_v1.DeviceInfo):java.util.List[String]"></a>
+      <a id="findExtSubDeviceId(DeviceInfo):List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">findExtSubDeviceId</span><span class="params">(<span name="info">info: <a href="DeviceInfo.html" class="extype" name="cloud.artik.cloudconnector.api_v1.DeviceInfo">DeviceInfo</a></span>)</span><span class="result">: <span class="extype" name="java.util.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Context@findExtSubDeviceId(info:cloud.artik.cloudconnector.api_v1.DeviceInfo):java.util.List[String]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Find the list of external id of sub-devices</p><div class="fullcomment"><div class="comment cmt"><p>Find the list of external id of sub-devices</p></div><dl class="paramcmts block"><dt class="param">info</dt><dd class="cmt"><p>the DeviceInfo of the parent device</p></dd><dt>returns</dt><dd class="cmt"><p>the list of external id (as String)</p></dd></dl></div>
+    </li><li name="cloud.artik.cloudconnector.api_v1.Context#findExtSubDeviceTypeIdByExtSubDeviceId" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="findExtSubDeviceTypeIdByExtSubDeviceId(info:cloud.artik.cloudconnector.api_v1.DeviceInfo,extSubDeviceId:String):Option[String]"></a>
+      <a id="findExtSubDeviceTypeIdByExtSubDeviceId(DeviceInfo,String):Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">findExtSubDeviceTypeIdByExtSubDeviceId</span><span class="params">(<span name="info">info: <a href="DeviceInfo.html" class="extype" name="cloud.artik.cloudconnector.api_v1.DeviceInfo">DeviceInfo</a></span>, <span name="extSubDeviceId">extSubDeviceId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Context@findExtSubDeviceTypeIdByExtSubDeviceId(info:cloud.artik.cloudconnector.api_v1.DeviceInfo,extSubDeviceId:String):Option[String]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Find ExtDtid of the sub device</p><div class="fullcomment"><div class="comment cmt"><p>Find ExtDtid of the sub device</p></div><dl class="paramcmts block"><dt class="param">info</dt><dd class="cmt"><p>the DeviceInfo of the parent device</p></dd><dt class="param">extSubDeviceId</dt><dd class="cmt"><p>the external id of the sub-device</p></dd><dt>returns</dt><dd class="cmt"><p>the ExtDtid of the sub-device or None if not found or not set</p></dd></dl></div>
+    </li><li name="cloud.artik.cloudconnector.api_v1.Context#findLatestUserData" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="findLatestUserData(info:cloud.artik.cloudconnector.api_v1.DeviceInfo):Option[String]"></a>
+      <a id="findLatestUserData(DeviceInfo):Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">findLatestUserData</span><span class="params">(<span name="info">info: <a href="DeviceInfo.html" class="extype" name="cloud.artik.cloudconnector.api_v1.DeviceInfo">DeviceInfo</a></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Context@findLatestUserData(info:cloud.artik.cloudconnector.api_v1.DeviceInfo):Option[String]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Find the latest value of user data.</p><div class="fullcomment"><div class="comment cmt"><p>Find the latest value of user data.
+It's a costly call (vs using DeviceInfo.userData that includes
+the value when notification or action was received), use with care.</p></div><dl class="paramcmts block"><dt class="param">info</dt><dd class="cmt"><p>the DeviceInfo of the parent device</p></dd><dt>returns</dt><dd class="cmt"><p>the user data of the device or None if not found or not set</p></dd></dl></div>
+    </li><li name="cloud.artik.cloudconnector.api_v1.Context#findUserDataByExtSubDeviceId" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="findUserDataByExtSubDeviceId(info:cloud.artik.cloudconnector.api_v1.DeviceInfo,extSubDeviceId:String):Option[String]"></a>
+      <a id="findUserDataByExtSubDeviceId(DeviceInfo,String):Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">findUserDataByExtSubDeviceId</span><span class="params">(<span name="info">info: <a href="DeviceInfo.html" class="extype" name="cloud.artik.cloudconnector.api_v1.DeviceInfo">DeviceInfo</a></span>, <span name="extSubDeviceId">extSubDeviceId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Context@findUserDataByExtSubDeviceId(info:cloud.artik.cloudconnector.api_v1.DeviceInfo,extSubDeviceId:String):Option[String]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Find user data of the sub device</p><div class="fullcomment"><div class="comment cmt"><p>Find user data of the sub device</p></div><dl class="paramcmts block"><dt class="param">info</dt><dd class="cmt"><p>the DeviceInfo of the parent device</p></dd><dt class="param">extSubDeviceId</dt><dd class="cmt"><p>the external id of the sub-device</p></dd><dt>returns</dt><dd class="cmt"><p>the user data of the sub-device or None if not found or not set</p></dd></dl></div>
     </li><li name="cloud.artik.cloudconnector.api_v1.Context#now" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="now():Long"></a>
       <a id="now():Long"></a>
@@ -593,7 +663,70 @@ ctx.parameters()[<span class="lit">"key"</span>] == <span class="lit">"value"</s
 
         
 
-        
+        <div id="values" class="values members">
+              <h3>Deprecated Value Members</h3>
+              <ol><li name="cloud.artik.cloudconnector.api_v1.Context#findExtDid" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="findExtDid(info:cloud.artik.cloudconnector.api_v1.DeviceInfo):java.util.List[String]"></a>
+      <a id="findExtDid(DeviceInfo):List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: replaced by findExtSubDeviceId">findExtDid</span><span class="params">(<span name="info">info: <a href="DeviceInfo.html" class="extype" name="cloud.artik.cloudconnector.api_v1.DeviceInfo">DeviceInfo</a></span>)</span><span class="result">: <span class="extype" name="java.util.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Context@findExtDid(info:cloud.artik.cloudconnector.api_v1.DeviceInfo):java.util.List[String]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p>replaced by findExtSubDeviceId</p></dd></dl></div>
+    </li><li name="cloud.artik.cloudconnector.api_v1.Context#findExtDtidByExtDid" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="findExtDtidByExtDid(info:cloud.artik.cloudconnector.api_v1.DeviceInfo,extSubDeviceId:String):Option[String]"></a>
+      <a id="findExtDtidByExtDid(DeviceInfo,String):Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: replaced by findExtSubDeviceTypeIdByExtSubDeviceId">findExtDtidByExtDid</span><span class="params">(<span name="info">info: <a href="DeviceInfo.html" class="extype" name="cloud.artik.cloudconnector.api_v1.DeviceInfo">DeviceInfo</a></span>, <span name="extSubDeviceId">extSubDeviceId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Context@findExtDtidByExtDid(info:cloud.artik.cloudconnector.api_v1.DeviceInfo,extSubDeviceId:String):Option[String]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p>replaced by findExtSubDeviceTypeIdByExtSubDeviceId</p></dd></dl></div>
+    </li><li name="cloud.artik.cloudconnector.api_v1.Context#findUserDataByExtDid" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="findUserDataByExtDid(info:cloud.artik.cloudconnector.api_v1.DeviceInfo,extSubDeviceId:String):Option[String]"></a>
+      <a id="findUserDataByExtDid(DeviceInfo,String):Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: replaced by findUserDataByExtSubDeviceId">findUserDataByExtDid</span><span class="params">(<span name="info">info: <a href="DeviceInfo.html" class="extype" name="cloud.artik.cloudconnector.api_v1.DeviceInfo">DeviceInfo</a></span>, <span name="extSubDeviceId">extSubDeviceId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.Context@findUserDataByExtDid(info:cloud.artik.cloudconnector.api_v1.DeviceInfo,extSubDeviceId:String):Option[String]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p>replaced by findUserDataByExtSubDeviceId</p></dd></dl></div>
+    </li></ol>
+            </div>
         </div>
 
         <div id="inheritedMembers">

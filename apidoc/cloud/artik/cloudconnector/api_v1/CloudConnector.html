@@ -281,6 +281,25 @@ Default impl: (keep as is)</p><pre>Good(req)</pre></div></div>
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="cloud.artik.cloudconnector.api_v1.CloudConnector#generateWelcomeMessage" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="generateWelcomeMessage(ctx:cloud.artik.cloudconnector.api_v1.Context,info:cloud.artik.cloudconnector.api_v1.DeviceInfo,req:Option[cloud.artik.cloudconnector.api_v1.RequestDef],res:Option[cloud.artik.cloudconnector.api_v1.Response]):org.scalactic.Or[cloud.artik.cloudconnector.api_v1.WelcomeTask,cloud.artik.cloudconnector.api_v1.Failure]"></a>
+      <a id="generateWelcomeMessage(Context,DeviceInfo,Option[RequestDef],Option[Response]):Or[WelcomeTask,Failure]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">generateWelcomeMessage</span><span class="params">(<span name="ctx">ctx: <a href="Context.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Context">Context</a></span>, <span name="info">info: <a href="DeviceInfo.html" class="extype" name="cloud.artik.cloudconnector.api_v1.DeviceInfo">DeviceInfo</a></span>, <span name="req">req: <span class="extype" name="scala.Option">Option</span>[<a href="RequestDef.html" class="extype" name="cloud.artik.cloudconnector.api_v1.RequestDef">RequestDef</a>]</span>, <span name="res">res: <span class="extype" name="scala.Option">Option</span>[<a href="Response.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Response">Response</a>]</span>)</span><span class="result">: <span class="extype" name="org.scalactic.Or">Or</span>[<a href="WelcomeTask.html" class="extype" name="cloud.artik.cloudconnector.api_v1.WelcomeTask">WelcomeTask</a>, <a href="Failure.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Failure">Failure</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.CloudConnector@generateWelcomeMessage(ctx:cloud.artik.cloudconnector.api_v1.Context,info:cloud.artik.cloudconnector.api_v1.DeviceInfo,req:Option[cloud.artik.cloudconnector.api_v1.RequestDef],res:Option[cloud.artik.cloudconnector.api_v1.Response]):org.scalactic.Or[cloud.artik.cloudconnector.api_v1.WelcomeTask,cloud.artik.cloudconnector.api_v1.Failure]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Override this method if you want to display a message after the subscription phase.</p><div class="fullcomment"><div class="comment cmt"><p>Override this method if you want to display a message after the subscription phase.
+You can use this method to list devices and let the user knows some devices will be created.
+Default impl: No welcome message is displayed</p><pre>Good(NoWelcomePage)</pre></div><dl class="paramcmts block"><dt class="param">ctx</dt><dd class="cmt"><p>the Context of execution</p></dd><dt class="param">info</dt><dd class="cmt"><p>the DeviceInfo of the target device</p></dd><dt class="param">req</dt><dd class="cmt"><p>the RequestDef that produce the res (None if no res is None)</p></dd><dt class="param">res</dt><dd class="cmt"><p>the Response produced by the RequestDef returns by a previous call to generateWelcomePage</p></dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -372,6 +391,49 @@ to complete the setup of the CloudConnector on the third party
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="cloud.artik.cloudconnector.api_v1.CloudConnector#normalizeOauth2Code" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="normalizeOauth2Code(ctx:cloud.artik.cloudconnector.api_v1.Context,req:cloud.artik.cloudconnector.api_v1.RequestDef):org.scalactic.Or[cloud.artik.cloudconnector.api_v1.RequestDef,cloud.artik.cloudconnector.api_v1.Failure]"></a>
+      <a id="normalizeOauth2Code(Context,RequestDef):Or[RequestDef,Failure]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">normalizeOauth2Code</span><span class="params">(<span name="ctx">ctx: <a href="Context.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Context">Context</a></span>, <span name="req">req: <a href="RequestDef.html" class="extype" name="cloud.artik.cloudconnector.api_v1.RequestDef">RequestDef</a></span>)</span><span class="result">: <span class="extype" name="org.scalactic.Or">Or</span>[<a href="RequestDef.html" class="extype" name="cloud.artik.cloudconnector.api_v1.RequestDef">RequestDef</a>, <a href="Failure.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Failure">Failure</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.CloudConnector@normalizeOauth2Code(ctx:cloud.artik.cloudconnector.api_v1.Context,req:cloud.artik.cloudconnector.api_v1.RequestDef):org.scalactic.Or[cloud.artik.cloudconnector.api_v1.RequestDef,cloud.artik.cloudconnector.api_v1.Failure]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sometimes the third-party cloud doesn't follow the OAuth2 RFC
+This method allow to &quot;normalize&quot; the incoming request with OAuth2 code.</p><div class="fullcomment"><div class="comment cmt"><p>Sometimes the third-party cloud doesn't follow the OAuth2 RFC
+This method allow to &quot;normalize&quot; the incoming request with OAuth2 code.</p><p>Default impl: (keep as is)</p><pre>Good(req)</pre></div><dl class="paramcmts block"><dt class="param">ctx</dt><dd class="cmt"><p>the Context for the current Cloud Connector</p></dd><dt class="param">req</dt><dd class="cmt"><p>the http request received by the server from the client with the oauth2's code,
+   the request to normalize</p></dd><dt>returns</dt><dd class="cmt"><p>a RequestDef with the oauth2's code as query parameter</p></dd></dl></div>
+    </li><li name="cloud.artik.cloudconnector.api_v1.CloudConnector#normalizeOauth2Token" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="normalizeOauth2Token(ctx:cloud.artik.cloudconnector.api_v1.Context,resp:cloud.artik.cloudconnector.api_v1.Response,phase:cloud.artik.cloudconnector.api_v1.Phase):org.scalactic.Or[cloud.artik.cloudconnector.api_v1.Response,cloud.artik.cloudconnector.api_v1.Failure]"></a>
+      <a id="normalizeOauth2Token(Context,Response,Phase):Or[Response,Failure]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">normalizeOauth2Token</span><span class="params">(<span name="ctx">ctx: <a href="Context.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Context">Context</a></span>, <span name="resp">resp: <a href="Response.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Response">Response</a></span>, <span name="phase">phase: <a href="Phase.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Phase">Phase</a></span>)</span><span class="result">: <span class="extype" name="org.scalactic.Or">Or</span>[<a href="Response.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Response">Response</a>, <a href="Failure.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Failure">Failure</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.CloudConnector@normalizeOauth2Token(ctx:cloud.artik.cloudconnector.api_v1.Context,resp:cloud.artik.cloudconnector.api_v1.Response,phase:cloud.artik.cloudconnector.api_v1.Phase):org.scalactic.Or[cloud.artik.cloudconnector.api_v1.Response,cloud.artik.cloudconnector.api_v1.Failure]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sometimes the third-party cloud doesn't follow the OAuth2 RFC
+This method allow to &quot;normalize&quot; the response to the request for accessToken (phase == getOauth2Token)
+or to the request to refreshToken (phase == refreshToken).</p><div class="fullcomment"><div class="comment cmt"><p>Sometimes the third-party cloud doesn't follow the OAuth2 RFC
+This method allow to &quot;normalize&quot; the response to the request for accessToken (phase == getOauth2Token)
+or to the request to refreshToken (phase == refreshToken).
+(this function is called before applying the mapping define in accessTokenUrlMapper if it is defined)</p><p>Default impl: (keep as is)</p><pre>Good(resp)</pre></div><dl class="paramcmts block"><dt class="param">ctx</dt><dd class="cmt"><p>the Context for the current Cloud Connector</p></dd><dt class="param">resp</dt><dd class="cmt"><p>the http response from the 3rd party cloud to the access token request (first time or refresh),
+  the request to normalize</p></dd><dt class="param">phase</dt><dd class="cmt"><p>the Phase where the response is read (getOauth2Token or refreshToken)</p></dd><dt>returns</dt><dd class="cmt"><p>a Response with the oauth2's parameter normalized</p></dd></dl></div>
     </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
       <a id="notify():Unit"></a>
@@ -427,36 +489,54 @@ The request targets 1 device. Optionally build data request with info from the D
 Fetch function will be called with the RequestDef included in.
 Default impl:</p><pre>Bad(Failure(<span class="lit">"unsupported: method onAction should be implemented"</span>))</pre></div></div>
     </li><li name="cloud.artik.cloudconnector.api_v1.CloudConnector#onActionData" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="onActionData(ctx:cloud.artik.cloudconnector.api_v1.Context,info:cloud.artik.cloudconnector.api_v1.DeviceInfo,data:String):org.scalactic.Or[java.util.List[cloud.artik.cloudconnector.api_v1.Event],cloud.artik.cloudconnector.api_v1.Failure]"></a>
-      <a id="onActionData(Context,DeviceInfo,String):Or[List[Event],Failure]"></a>
+      <a id="onActionData(ctx:cloud.artik.cloudconnector.api_v1.Context,info:cloud.artik.cloudconnector.api_v1.DeviceInfo,data:String):org.scalactic.Or[java.util.List[cloud.artik.cloudconnector.api_v1.Task],cloud.artik.cloudconnector.api_v1.Failure]"></a>
+      <a id="onActionData(Context,DeviceInfo,String):Or[List[Task],Failure]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">onActionData</span><span class="params">(<span name="ctx">ctx: <a href="Context.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Context">Context</a></span>, <span name="info">info: <a href="DeviceInfo.html" class="extype" name="cloud.artik.cloudconnector.api_v1.DeviceInfo">DeviceInfo</a></span>, <span name="data">data: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.scalactic.Or">Or</span>[<span class="extype" name="java.util.List">List</span>[<a href="Event.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Event">Event</a>], <a href="Failure.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Failure">Failure</a>]</span>
+        <span class="name">onActionData</span><span class="params">(<span name="ctx">ctx: <a href="Context.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Context">Context</a></span>, <span name="info">info: <a href="DeviceInfo.html" class="extype" name="cloud.artik.cloudconnector.api_v1.DeviceInfo">DeviceInfo</a></span>, <span name="data">data: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.scalactic.Or">Or</span>[<span class="extype" name="java.util.List">List</span>[<a href="Task.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Task">Task</a>], <a href="Failure.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Failure">Failure</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.CloudConnector@onActionData(ctx:cloud.artik.cloudconnector.api_v1.Context,info:cloud.artik.cloudconnector.api_v1.DeviceInfo,data:String):org.scalactic.Or[java.util.List[cloud.artik.cloudconnector.api_v1.Event],cloud.artik.cloudconnector.api_v1.Failure]" title="Permalink" target="_top">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.CloudConnector@onActionData(ctx:cloud.artik.cloudconnector.api_v1.Context,info:cloud.artik.cloudconnector.api_v1.DeviceInfo,data:String):org.scalactic.Or[java.util.List[cloud.artik.cloudconnector.api_v1.Task],cloud.artik.cloudconnector.api_v1.Failure]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Callback_6: Called for each pushed data generated by onAction
 </p>
-    </li><li name="cloud.artik.cloudconnector.api_v1.CloudConnector#onFetchResponse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="onFetchResponse(ctx:cloud.artik.cloudconnector.api_v1.Context,req:cloud.artik.cloudconnector.api_v1.RequestDef,info:cloud.artik.cloudconnector.api_v1.DeviceInfo,res:cloud.artik.cloudconnector.api_v1.Response):org.scalactic.Or[java.util.List[cloud.artik.cloudconnector.api_v1.Event],cloud.artik.cloudconnector.api_v1.Failure]"></a>
-      <a id="onFetchResponse(Context,RequestDef,DeviceInfo,Response):Or[List[Event],Failure]"></a>
+    </li><li name="cloud.artik.cloudconnector.api_v1.CloudConnector#onCustomAuthentication" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="onCustomAuthentication(ctx:cloud.artik.cloudconnector.api_v1.Context,req:cloud.artik.cloudconnector.api_v1.RequestDef,res:Option[cloud.artik.cloudconnector.api_v1.Response]):org.scalactic.Or[cloud.artik.cloudconnector.api_v1.CustomAuthenticationTask,cloud.artik.cloudconnector.api_v1.Failure]"></a>
+      <a id="onCustomAuthentication(Context,RequestDef,Option[Response]):Or[CustomAuthenticationTask,Failure]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">onFetchResponse</span><span class="params">(<span name="ctx">ctx: <a href="Context.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Context">Context</a></span>, <span name="req">req: <a href="RequestDef.html" class="extype" name="cloud.artik.cloudconnector.api_v1.RequestDef">RequestDef</a></span>, <span name="info">info: <a href="DeviceInfo.html" class="extype" name="cloud.artik.cloudconnector.api_v1.DeviceInfo">DeviceInfo</a></span>, <span name="res">res: <a href="Response.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Response">Response</a></span>)</span><span class="result">: <span class="extype" name="org.scalactic.Or">Or</span>[<span class="extype" name="java.util.List">List</span>[<a href="Event.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Event">Event</a>], <a href="Failure.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Failure">Failure</a>]</span>
+        <span class="name">onCustomAuthentication</span><span class="params">(<span name="ctx">ctx: <a href="Context.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Context">Context</a></span>, <span name="req">req: <a href="RequestDef.html" class="extype" name="cloud.artik.cloudconnector.api_v1.RequestDef">RequestDef</a></span>, <span name="res">res: <span class="extype" name="scala.Option">Option</span>[<a href="Response.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Response">Response</a>]</span>)</span><span class="result">: <span class="extype" name="org.scalactic.Or">Or</span>[<a href="CustomAuthenticationTask.html" class="extype" name="cloud.artik.cloudconnector.api_v1.CustomAuthenticationTask">CustomAuthenticationTask</a>, <a href="Failure.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Failure">Failure</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.CloudConnector@onFetchResponse(ctx:cloud.artik.cloudconnector.api_v1.Context,req:cloud.artik.cloudconnector.api_v1.RequestDef,info:cloud.artik.cloudconnector.api_v1.DeviceInfo,res:cloud.artik.cloudconnector.api_v1.Response):org.scalactic.Or[java.util.List[cloud.artik.cloudconnector.api_v1.Event],cloud.artik.cloudconnector.api_v1.Failure]" title="Permalink" target="_top">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.CloudConnector@onCustomAuthentication(ctx:cloud.artik.cloudconnector.api_v1.Context,req:cloud.artik.cloudconnector.api_v1.RequestDef,res:Option[cloud.artik.cloudconnector.api_v1.Response]):org.scalactic.Or[cloud.artik.cloudconnector.api_v1.CustomAuthenticationTask,cloud.artik.cloudconnector.api_v1.Failure]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Override this method if your CloudConnector authentication type is CUSTOM_AUTH.</p><div class="fullcomment"><div class="comment cmt"><p>Override this method if your CloudConnector authentication type is CUSTOM_AUTH.
+Default impl:</p><pre>Bad(Failure(<span class="lit">"unsupported: method onCustomAuthentication should be implemented"</span>))</pre></div></div>
+    </li><li name="cloud.artik.cloudconnector.api_v1.CloudConnector#onFetchResponse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="onFetchResponse(ctx:cloud.artik.cloudconnector.api_v1.Context,req:cloud.artik.cloudconnector.api_v1.RequestDef,info:cloud.artik.cloudconnector.api_v1.DeviceInfo,res:cloud.artik.cloudconnector.api_v1.Response):org.scalactic.Or[java.util.List[cloud.artik.cloudconnector.api_v1.Task],cloud.artik.cloudconnector.api_v1.Failure]"></a>
+      <a id="onFetchResponse(Context,RequestDef,DeviceInfo,Response):Or[List[Task],Failure]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">onFetchResponse</span><span class="params">(<span name="ctx">ctx: <a href="Context.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Context">Context</a></span>, <span name="req">req: <a href="RequestDef.html" class="extype" name="cloud.artik.cloudconnector.api_v1.RequestDef">RequestDef</a></span>, <span name="info">info: <a href="DeviceInfo.html" class="extype" name="cloud.artik.cloudconnector.api_v1.DeviceInfo">DeviceInfo</a></span>, <span name="res">res: <a href="Response.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Response">Response</a></span>)</span><span class="result">: <span class="extype" name="org.scalactic.Or">Or</span>[<span class="extype" name="java.util.List">List</span>[<a href="Task.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Task">Task</a>], <a href="Failure.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Failure">Failure</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.CloudConnector@onFetchResponse(ctx:cloud.artik.cloudconnector.api_v1.Context,req:cloud.artik.cloudconnector.api_v1.RequestDef,info:cloud.artik.cloudconnector.api_v1.DeviceInfo,res:cloud.artik.cloudconnector.api_v1.Response):org.scalactic.Or[java.util.List[cloud.artik.cloudconnector.api_v1.Task],cloud.artik.cloudconnector.api_v1.Failure]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -505,18 +585,18 @@ The request can target 0+ devices and can notify about 1+ data feed.
 Default impl:</p><pre>Bad(Failure(<span class="lit">"unsupported : method onNotification should be implemented"</span>))</pre><p>Failure(&quot;unsupported : method onNotification should be implemented&quot;)
 </p></div></div>
     </li><li name="cloud.artik.cloudconnector.api_v1.CloudConnector#onNotificationData" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="onNotificationData(ctx:cloud.artik.cloudconnector.api_v1.Context,info:cloud.artik.cloudconnector.api_v1.DeviceInfo,data:String):org.scalactic.Or[java.util.List[cloud.artik.cloudconnector.api_v1.Event],cloud.artik.cloudconnector.api_v1.Failure]"></a>
-      <a id="onNotificationData(Context,DeviceInfo,String):Or[List[Event],Failure]"></a>
+      <a id="onNotificationData(ctx:cloud.artik.cloudconnector.api_v1.Context,info:cloud.artik.cloudconnector.api_v1.DeviceInfo,data:String):org.scalactic.Or[java.util.List[cloud.artik.cloudconnector.api_v1.Task],cloud.artik.cloudconnector.api_v1.Failure]"></a>
+      <a id="onNotificationData(Context,DeviceInfo,String):Or[List[Task],Failure]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">onNotificationData</span><span class="params">(<span name="ctx">ctx: <a href="Context.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Context">Context</a></span>, <span name="info">info: <a href="DeviceInfo.html" class="extype" name="cloud.artik.cloudconnector.api_v1.DeviceInfo">DeviceInfo</a></span>, <span name="data">data: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.scalactic.Or">Or</span>[<span class="extype" name="java.util.List">List</span>[<a href="Event.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Event">Event</a>], <a href="Failure.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Failure">Failure</a>]</span>
+        <span class="name">onNotificationData</span><span class="params">(<span name="ctx">ctx: <a href="Context.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Context">Context</a></span>, <span name="info">info: <a href="DeviceInfo.html" class="extype" name="cloud.artik.cloudconnector.api_v1.DeviceInfo">DeviceInfo</a></span>, <span name="data">data: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.scalactic.Or">Or</span>[<span class="extype" name="java.util.List">List</span>[<a href="Task.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Task">Task</a>], <a href="Failure.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Failure">Failure</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.CloudConnector@onNotificationData(ctx:cloud.artik.cloudconnector.api_v1.Context,info:cloud.artik.cloudconnector.api_v1.DeviceInfo,data:String):org.scalactic.Or[java.util.List[cloud.artik.cloudconnector.api_v1.Event],cloud.artik.cloudconnector.api_v1.Failure]" title="Permalink" target="_top">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.CloudConnector@onNotificationData(ctx:cloud.artik.cloudconnector.api_v1.Context,info:cloud.artik.cloudconnector.api_v1.DeviceInfo,data:String):org.scalactic.Or[java.util.List[cloud.artik.cloudconnector.api_v1.Task],cloud.artik.cloudconnector.api_v1.Failure]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -599,10 +679,12 @@ You can use this method to complete request with authorisation data, ...</p><p>D
       <p class="shortcomment cmt">Override this method if CloudConnector require to do some request
 to complete the subscription after authentication
 (eg: to retreive user's timezone use in notification,
-to request subscriptionId on 3rd party cloud)</p><div class="fullcomment"><div class="comment cmt"><p>Override this method if CloudConnector require to do some request
+to request subscriptionId on 3rd party cloud).</p><div class="fullcomment"><div class="comment cmt"><p>Override this method if CloudConnector require to do some request
 to complete the subscription after authentication
 (eg: to retreive user's timezone use in notification,
-to request subscriptionId on 3rd party cloud)</p><p>phase: <code>subscribe</code>
+to request subscriptionId on 3rd party cloud).</p><p>The function could be called several times for a remote device:
+* several ARTIK Cloud device are linked to the same remote account/device
+* re-subscription is called explicitly</p><p>phase: <code>subscribe</code>
 Default impl:</p><pre>Good(Empty.list)</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a list of Requests that will be called in order to subscribe to notifications for a given device.</p></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
@@ -657,6 +739,32 @@ Default impl:</p><pre>Good(Empty.list)</pre></div><dl class="paramcmts block"><d
       <p class="shortcomment cmt">Override this method if CloudConnector require to do some request
 to complete the unsubscription.</p><div class="fullcomment"><div class="comment cmt"><p>Override this method if CloudConnector require to do some request
 to complete the unsubscription.
+If several ARTIK Cloud device share the same external Id, then the function will be called,
+only when the last device will be removed. To avoid remove notification on external Id shared
+by several devices.</p><p>phase: <code>unsubscribe</code>
+Default impl:</p><pre>Good(Empty.list)</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a list of Requests that will be called in order to remove notifications/subscription on third party for a given device.</p></dd></dl></div>
+    </li><li name="cloud.artik.cloudconnector.api_v1.CloudConnector#unsubscribeLast" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="unsubscribeLast(ctx:cloud.artik.cloudconnector.api_v1.Context,info:cloud.artik.cloudconnector.api_v1.DeviceInfo):org.scalactic.Or[java.util.List[cloud.artik.cloudconnector.api_v1.RequestDef],cloud.artik.cloudconnector.api_v1.Failure]"></a>
+      <a id="unsubscribeLast(Context,DeviceInfo):Or[List[RequestDef],Failure]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">unsubscribeLast</span><span class="params">(<span name="ctx">ctx: <a href="Context.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Context">Context</a></span>, <span name="info">info: <a href="DeviceInfo.html" class="extype" name="cloud.artik.cloudconnector.api_v1.DeviceInfo">DeviceInfo</a></span>)</span><span class="result">: <span class="extype" name="org.scalactic.Or">Or</span>[<span class="extype" name="java.util.List">List</span>[<a href="RequestDef.html" class="extype" name="cloud.artik.cloudconnector.api_v1.RequestDef">RequestDef</a>], <a href="Failure.html" class="extype" name="cloud.artik.cloudconnector.api_v1.Failure">Failure</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cloud.artik.cloudconnector.api_v1.CloudConnector@unsubscribeLast(ctx:cloud.artik.cloudconnector.api_v1.Context,info:cloud.artik.cloudconnector.api_v1.DeviceInfo):org.scalactic.Or[java.util.List[cloud.artik.cloudconnector.api_v1.RequestDef],cloud.artik.cloudconnector.api_v1.Failure]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Override this method if CloudConnector requires to do some request
+to complete the unsubscription for the last connected device of a user.</p><div class="fullcomment"><div class="comment cmt"><p>Override this method if CloudConnector requires to do some request
+to complete the unsubscription for the last connected device of a user.
+This method will be called only if the CloudConnector is using external Id.
+and if the device is the last device of the user for a given external Id.
+This method will be called once  the unsubscribe method has been done successfully for this device.
 phase: <code>unsubscribe</code>
 Default impl:</p><pre>Good(Empty.list)</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a list of Requests that will be called in order to remove notifications/subscription on third party for a given device.</p></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
